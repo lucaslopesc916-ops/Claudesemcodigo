@@ -156,19 +156,36 @@
 
 /* ---- Mobile tweaks do retrato ---- */
 @media (max-width:979px){
-  .hero-visual{order:-1;min-height:0;margin-bottom:12px}
-  .portrait{width:min(72vw,340px)}
-  .badge-tr{top:10px;right:-8px;padding:10px 14px;min-width:100px}
-  .badge-tr .badge-value{font-size:19px}
-  .badge-bl{bottom:40px;left:-12px;padding:10px 14px}
-  .badge-bl .badge-icon{width:30px;height:30px}
-  .badge-bl .badge-value{font-size:17px}
-  .badge-pill{bottom:-14px;font-size:12px;padding:9px 14px}
+  .hero{min-height:auto}
+  .hero-visual{order:-1;min-height:0;margin-bottom:4px}
+  .portrait{width:min(60vw,280px)}
+  .badge-tr{top:8px;right:-4px;padding:9px 13px;min-width:auto}
+  .badge-tr .badge-kicker{font-size:10px}
+  .badge-tr .badge-value{font-size:17px}
+  .badge-bl{bottom:32px;left:-6px;padding:9px 12px;gap:10px}
+  .badge-bl .badge-icon{width:28px;height:28px}
+  .badge-bl .badge-icon svg{width:15px;height:15px}
+  .badge-bl .badge-value{font-size:15px}
+  .badge-bl .badge-kicker{font-size:10px}
+  .badge-pill{bottom:-12px;font-size:11px;padding:8px 13px;gap:6px}
 }
 
-@media (max-width:420px){
-  .badge-tr{right:-4px}
-  .badge-bl{left:-4px}
+@media (max-width:560px){
+  .hero{padding:clamp(36px,5vh,60px) 0 clamp(40px,5vh,64px)}
+  .hero-inner{gap:22px}
+  .portrait{width:min(52vw,220px)}
+  .badge-tr{top:4px;right:-2px;padding:7px 11px}
+  .badge-tr .badge-kicker{font-size:9px;letter-spacing:0.04em}
+  .badge-tr .badge-value{font-size:15px}
+  .badge-tr .badge-value small{font-size:10px}
+  .badge-bl{bottom:22px;left:-4px;padding:7px 10px;gap:8px}
+  .badge-bl .badge-icon{width:24px;height:24px;border-radius:8px}
+  .badge-bl .badge-icon svg{width:13px;height:13px}
+  .badge-bl .badge-value{font-size:13px}
+  .badge-bl .badge-kicker{font-size:9px;margin-top:1px}
+  .badge-pill{bottom:-10px;font-size:10.5px;padding:7px 12px;letter-spacing:-0.01em}
+  .eyebrow{margin-bottom:18px}
+  .hero-sub{margin-bottom:22px}
 }
 
 /* -------- Section frame genérica -------- */
@@ -306,7 +323,18 @@
   border-bottom:1px solid var(--line);
   transition:background .3s var(--ease);
 }
-.stack-row.is-bonus{background:linear-gradient(90deg, rgba(217,119,87,0.04) 0%, transparent 100%)}
+.stack-row.is-bonus{
+  background:linear-gradient(135deg,rgba(217,119,87,0.08) 0%,rgba(217,119,87,0.02) 100%);
+  border:1px solid rgba(217,119,87,0.18);
+  border-radius:var(--radius-m);
+  padding:clamp(22px,2.8vw,28px) clamp(18px,2.2vw,24px);
+  margin:10px calc(-1 * clamp(18px,2.2vw,24px));
+}
+.stack-row.is-bonus + .stack-row.is-bonus{margin-top:10px}
+/* A última row (bônus 2) não deve ter a border-bottom do grid base */
+.stack-row.is-bonus{border-bottom-color:transparent}
+/* Tira o border-bottom do Módulo 04 (row anterior ao primeiro bônus) pra não criar linha dupla com o card */
+.stack-row:has(+ .stack-row.is-bonus){border-bottom-color:transparent}
 .stack-side{padding-top:4px}
 .stack-kicker{
   font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
