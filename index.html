@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="O método que ensina empresário não-dev a automatizar relatórios, planilhas e conteúdo com Claude. Sem código. Pré-venda por R$127 até 20/04.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1D1D1F">
+<meta property="og:title" content="Claude sem Código — Automatize 8h/semana do seu negócio">
+<meta property="og:description" content="Método para empresários automatizarem tarefas com Claude sem virar programador. Pré-venda R$127 até 20/04.">
+<meta property="og:type" content="website">
+<title>Claude sem Código — Automatize 8h/semana do seu negócio</title>
+
+<style>
+/* ============================================================
+   CSS crítico — carrega antes de tudo pra evitar FOUC
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#FFFFFF;
+  --bg-soft:#F5F5F7;
+  --bg-dark:#1D1D1F;
+  --bg-darker:#000000;
+  --text:#1D1D1F;
+  --text-soft:#6E6E73;
+  --text-mute:#86868B;
+  --text-on-dark:#F5F5F7;
+  --text-on-dark-soft:#A1A1A6;
+  --line:rgba(0,0,0,0.08);
+  --line-on-dark:rgba(255,255,255,0.12);
+  --accent:#D97757;
+  --accent-hover:#BE5E3E;
+  --radius-s:10px;
+  --radius-m:18px;
+  --radius-l:28px;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  --max:1200px;
+  --gutter:clamp(22px,4vw,48px);
+}
+
+html{
+  -webkit-text-size-adjust:100%;
+  scroll-behavior:smooth;
+  scroll-padding-top:88px;
+}
+
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","Segoe UI",Roboto,sans-serif;
+  font-feature-settings:"ss01","cv11","tnum" 0;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.47;
+  font-size:17px;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------- Nav ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:52px;
+  background:rgba(245,245,247,0.72);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:var(--max);margin:0 auto;height:100%;
+  padding:0 var(--gutter);
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.wordmark{
+  font-size:17px;font-weight:600;letter-spacing:-0.01em;color:var(--text);
+  text-decoration:none;
+}
+.wordmark em{color:var(--accent);font-style:normal;font-weight:700}
+.nav-buy{
+  font-size:14px;font-weight:500;color:var(--text);text-decoration:none;
+  padding:6px 14px;border-radius:999px;background:var(--bg);
+  border:1px solid var(--line);
+  transition:background .3s var(--ease),color .3s var(--ease);
+  white-space:nowrap;
+}
+.nav-buy:hover{background:var(--text);color:var(--bg)}
+
+/* ---------- Ticker (pré-venda) ---------- */
+.ticker{
+  position:fixed;top:52px;left:0;right:0;z-index:99;
+  background:var(--bg-dark);color:var(--text-on-dark);
+  font-size:13px;font-weight:500;letter-spacing:0.01em;
+  text-align:center;padding:9px 20px;
+  border-bottom:1px solid var(--line-on-dark);
+}
+.ticker b{color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums}
+
+/* Offset para fixed header + ticker */
+.has-sticky{padding-top:90px}
+
+/* ---------- Hero CSS crítico ---------- */
+.hero{
+  min-height:calc(100vh - 90px);
+  display:flex;align-items:center;
+  padding:clamp(56px,8vh,96px) 0 clamp(56px,6vh,80px);
+  position:relative;
+  overflow:hidden;
+}
+.hero-bg{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero-glow{
+  position:absolute;top:-20%;right:-10%;
+  width:min(780px,90vw);aspect-ratio:1;
+  background:radial-gradient(circle,rgba(217,119,87,0.18) 0%,rgba(217,119,87,0.08) 28%,transparent 62%);
+  filter:blur(20px);
+}
+.hero-dots{
+  position:absolute;inset:0;
+  background-image:radial-gradient(circle at 1px 1px,rgba(29,29,31,0.06) 1px,transparent 0);
+  background-size:28px 28px;
+  mask-image:radial-gradient(ellipse at 30% 50%,#000 0%,transparent 70%);
+  -webkit-mask-image:radial-gradient(ellipse at 30% 50%,#000 0%,transparent 70%);
+  opacity:0.8;
+}
+.hero-inner{
+  max-width:var(--max);margin:0 auto;width:100%;
+  padding:0 var(--gutter);
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(40px,6vw,72px);
+  align-items:center;
+  position:relative;z-index:1;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:24px;
+  padding:7px 14px 7px 12px;
+  background:rgba(217,119,87,0.08);
+  border:1px solid rgba(217,119,87,0.2);
+  border-radius:999px;
+}
+.live-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--accent);
+  position:relative;
+  flex:0 0 7px;
+}
+.live-dot::after{
+  content:"";position:absolute;inset:-4px;border-radius:50%;
+  background:var(--accent);opacity:0.4;
+  animation:pulse 1.8s var(--ease) infinite;
+}
+@keyframes pulse{
+  0%{transform:scale(0.6);opacity:0.5}
+  70%{transform:scale(1.8);opacity:0}
+  100%{transform:scale(1.8);opacity:0}
+}
+.h1{
+  font-size:clamp(2.5rem, 4.2vw + 0.6rem, 5rem);
+  line-height:1.04;
+  letter-spacing:-0.028em;
+  font-weight:700;
+  text-wrap:balance;
+  max-width:15ch;
+  margin-bottom:clamp(20px,2.4vw,28px);
+}
+.h1 em{color:var(--accent);font-style:normal}
+.hero-sub{
+  font-size:clamp(1.05rem, 0.3vw + 1rem, 1.3rem);
+  line-height:1.48;
+  color:var(--text-soft);
+  font-weight:400;
+  max-width:42ch;
+  margin-bottom:clamp(28px,3vw,40px);
+  letter-spacing:-0.005em;
+}
+.hero-sub strong{color:var(--text);font-weight:600}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+@media (min-width:980px){
+  .hero-inner{grid-template-columns:minmax(0,1.05fr) minmax(0,0.9fr)}
+  .h1{font-size:clamp(3rem, 3.6vw + 0.8rem, 5.25rem)}
+}
+
+/* Buttons (crítico pra não pular layout) */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  height:52px;padding:0 28px;
+  font-family:inherit;font-size:16px;font-weight:500;letter-spacing:-0.005em;
+  text-decoration:none;cursor:pointer;border:0;
+  border-radius:999px;
+  transition:background .3s var(--ease),transform .15s var(--ease),color .3s var(--ease);
+}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-hover)}
+.btn-primary:active{transform:scale(0.98)}
+.btn-ghost{background:transparent;color:var(--text);padding:0 4px}
+.btn-ghost:hover{color:var(--accent)}
+.btn-ghost .arrow{display:inline-block;transition:transform .3s var(--ease)}
+.btn-ghost:hover .arrow{transform:translateX(4px)}
+
+.focus-ring:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* Price chip */
+.chip{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 8px 8px 16px;border-radius:999px;
+  background:#fff;border:1px solid var(--line);
+  font-size:14px;color:var(--text-soft);
+  margin-bottom:28px;
+  box-shadow:0 1px 0 rgba(0,0,0,0.02),0 4px 14px -6px rgba(0,0,0,0.06);
+}
+.chip .old{text-decoration:line-through;color:var(--text-mute);font-variant-numeric:tabular-nums}
+.chip .sep{color:var(--text-mute);font-size:13px;margin:0 -2px}
+.chip .new{font-weight:700;color:var(--text);font-size:16px;letter-spacing:-0.01em;font-variant-numeric:tabular-nums}
+.chip .chip-tag{
+  font-size:12px;font-weight:600;letter-spacing:0.02em;
+  padding:5px 12px;border-radius:999px;
+  background:var(--bg-dark);color:#fff;
+  margin-left:4px;
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none !important;animation:none !important}
+}
+</style>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="has-sticky">
+
+<!-- ========== NAV ========== -->
+<nav class="nav" aria-label="Principal">
+  <div class="nav-inner">
+    <a href="#top" class="wordmark focus-ring">Claude <em>sem Código</em></a>
+    <a href="#oferta" class="nav-buy focus-ring">Comprar • R$127</a>
+  </div>
+</nav>
+
+<!-- ========== TICKER ========== -->
+<div class="ticker" role="status">
+  Pré-venda termina em <b id="countdown">--d --h --m --s</b>
+</div>
+
+<main id="top">
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-glow"></div>
+    <div class="hero-dots"></div>
+  </div>
+
+  <div class="hero-inner">
+
+    <div class="hero-text">
+      <span class="eyebrow reveal">
+        <span class="live-dot" aria-hidden="true"></span>
+        Pré-venda • acesso imediato
+      </span>
+
+      <h1 class="h1 reveal">
+        Automatize <em>8 horas</em><br>por semana do seu<br>negócio com Claude.
+      </h1>
+
+      <p class="hero-sub reveal">
+        O método que já ensinou <strong>+ de 120 pessoas</strong> a usar Claude Chat, Cowork e Code — sem precisar saber código ou contratar dev.
+      </p>
+
+      <div class="chip reveal" aria-label="Preço promocional R$127, de R$247, até 20 de abril">
+        <span class="old">R$247</span>
+        <span class="sep" aria-hidden="true">→</span>
+        <span class="new">R$127</span>
+        <span class="chip-tag">até 20/04</span>
+      </div>
+
+      <div class="hero-actions reveal">
+        <a href="https://pay.kiwify.com.br/aH5fe5K" class="btn btn-primary focus-ring" data-cta="hero" rel="noopener">Quero acesso</a>
+        <a href="#mecanismo" class="btn btn-ghost focus-ring">Ver o método <span class="arrow">›</span></a>
+      </div>
+
+      <div class="hero-trust reveal">
+        <div class="stars" aria-label="Avaliação 9,8 de 10">
+          <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M10 1.5l2.6 5.6 6 .7-4.4 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.8l6-.7z"/></svg>
+          <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M10 1.5l2.6 5.6 6 .7-4.4 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.8l6-.7z"/></svg>
+          <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M10 1.5l2.6 5.6 6 .7-4.4 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.8l6-.7z"/></svg>
+          <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M10 1.5l2.6 5.6 6 .7-4.4 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.8l6-.7z"/></svg>
+          <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M10 1.5l2.6 5.6 6 .7-4.4 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.8l6-.7z"/></svg>
+        </div>
+        <span class="trust-score"><b>9.8</b>/10</span>
+        <span class="trust-sep" aria-hidden="true"></span>
+        <span class="trust-label"><b>+250</b> alunos formados</span>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <figure class="portrait">
+
+        <div class="portrait-frame">
+          <img
+            src="assets/lucas-720.jpg"
+            srcset="assets/lucas-480.jpg 480w, assets/lucas-720.jpg 720w, assets/lucas-1080.jpg 1080w"
+            sizes="(min-width:980px) 420px, (min-width:560px) 340px, 72vw"
+            alt="Lucas Lopes, criador do Claude sem Código"
+            width="832" height="1248"
+            loading="eager" decoding="async" fetchpriority="high">
+        </div>
+
+        <!-- Badge: credencial -->
+        <div class="badge badge-tr" aria-hidden="true">
+          <span class="badge-kicker">Workshop abril</span>
+          <span class="badge-value">9.8<small>/10</small></span>
+        </div>
+
+        <!-- Badge: social proof -->
+        <div class="badge badge-bl" aria-hidden="true">
+          <div class="badge-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M22 21v-2a4 4 0 0 0-3-3.87M9 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <span class="badge-value">+250</span>
+            <span class="badge-kicker">alunos formados</span>
+          </div>
+        </div>
+
+        <!-- Pill: outcome -->
+        <div class="badge-pill" aria-hidden="true">
+          <span class="pill-arrow">↓</span>
+          <span><b>8 horas</b> por semana economizadas</span>
+        </div>
+
+      </figure>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== PITCH (seção escura) ========== -->
+<section class="sec sec-dark" id="pitch">
+  <div class="sec-inner">
+    <h2 class="h2 reveal">
+      Você já sabe <span class="dim">perguntar ao Claude.</span><br>
+      Agora aprende <em>a fazer ele trabalhar sozinho.</em>
+    </h2>
+
+    <div class="pitch-grid">
+      <p class="reveal">A maioria dos cursos de IA te ensina prompt. Isso economiza dez minutos por dia, no máximo.</p>
+      <p class="reveal">O que economiza <strong>oito horas por semana</strong> é outra coisa: fazer o Claude puxar dado, gerar relatório, organizar planilha e publicar conteúdo — sem você abrir a tela toda vez.</p>
+      <p class="reveal">E pra isso funcionar, você não precisa de um Claude. Precisa de três.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MECANISMO — A TRINCA ========== -->
+<section class="sec sec-soft" id="mecanismo">
+  <div class="sec-inner">
+    <span class="eyebrow center reveal">O método</span>
+    <h2 class="h2 center reveal">A Trinca Claude.</h2>
+    <p class="lead reveal">O único jeito de um empresário não-dev montar automação real é usar os três juntos em fluxo único.</p>
+
+    <div class="trinca">
+      <article class="tri-card reveal">
+        <div class="tri-num">01</div>
+        <h3 class="tri-title">Claude Chat</h3>
+        <p class="tri-desc">Onde você comanda. É daqui que a automação nasce — você descreve o processo em linguagem de gestor e recebe a lógica de volta.</p>
+      </article>
+
+      <article class="tri-card reveal">
+        <div class="tri-num">02</div>
+        <h3 class="tri-title">Claude Cowork</h3>
+        <p class="tri-desc">Onde sua equipe executa junto. Cada pessoa do time no mesmo contexto, sem você virar gargalo do processo.</p>
+      </article>
+
+      <article class="tri-card reveal">
+        <div class="tri-num">03</div>
+        <h3 class="tri-title">Claude Code</h3>
+        <p class="tri-desc">Onde a automação roda sozinha. Sem você precisar abrir o navegador. Sem uma linha escrita por você.</p>
+      </article>
+    </div>
+
+    <p class="note reveal">Quase ninguém ensina os três juntos. Quem ensina, ensina separado — e você sai com três ferramentas soltas, sem fluxo. Por isso automação "parece complexa".</p>
+  </div>
+</section>
+
+<!-- ========== OFERTA / STACK ========== -->
+<section class="sec" id="oferta">
+  <div class="sec-inner">
+    <span class="eyebrow center reveal">O que você leva</span>
+    <h2 class="h2 center reveal">Tudo que está dentro.</h2>
+
+    <div class="stack">
+      <article class="stack-row reveal">
+        <div class="stack-side"><span class="stack-kicker">Módulo 01</span></div>
+        <div class="stack-main">
+          <h3>Fundamentos do Claude para não-devs</h3>
+          <p>Do zero ao Claude rodando no seu dia-a-dia. Mesmo se você nunca passou do ChatGPT.</p>
+        </div>
+        <div class="stack-price">R$297</div>
+      </article>
+
+      <article class="stack-row reveal">
+        <div class="stack-side"><span class="stack-kicker">Módulo 02</span></div>
+        <div class="stack-main">
+          <h3>Claude Cowork na sua equipe</h3>
+          <p>Como espalhar Claude pro time sem virar suporte técnico. Contexto compartilhado, padrões e guardrails.</p>
+        </div>
+        <div class="stack-price">R$297</div>
+      </article>
+
+      <article class="stack-row reveal">
+        <div class="stack-side"><span class="stack-kicker">Módulo 03</span></div>
+        <div class="stack-main">
+          <h3>Claude Code para automação sem código</h3>
+          <p>A parte que ninguém ensina. Como fazer o Claude Code executar rotinas inteiras — e você só olhar o resultado.</p>
+        </div>
+        <div class="stack-price">R$397</div>
+      </article>
+
+      <article class="stack-row reveal">
+        <div class="stack-side"><span class="stack-kicker">Módulo 04</span></div>
+        <div class="stack-main">
+          <h3>Automações prontas para copiar</h3>
+          <p>Relatório semanal, análise de planilha, resumo de reunião, geração de conteúdo. Plug-and-play.</p>
+        </div>
+        <div class="stack-price">R$297</div>
+      </article>
+
+      <article class="stack-row is-bonus reveal">
+        <div class="stack-side"><span class="stack-kicker accent">Bônus 01</span></div>
+        <div class="stack-main">
+          <h3>Workshop ao vivo gravado <span class="meta">1h30</span></h3>
+          <p>Sessão real de tira-dúvidas com alunos trazendo travamentos de verdade. Você vê como se destrava.</p>
+        </div>
+        <div class="stack-price">R$197</div>
+      </article>
+
+      <article class="stack-row is-bonus reveal">
+        <div class="stack-side"><span class="stack-kicker accent">Bônus 02</span></div>
+        <div class="stack-main">
+          <h3>Call individual de diagnóstico comigo <span class="meta">1-a-1</span></h3>
+          <p>Abro seu negócio, mapeio onde tem automação escondida e te digo por onde começar pra ver resultado rápido.</p>
+        </div>
+        <div class="stack-price">R$497</div>
+      </article>
+    </div>
+
+    <div class="anchor reveal">
+      <div class="anchor-row"><span>Valor separado</span><span class="old">R$1.982</span></div>
+      <div class="anchor-row"><span>Preço cheio</span><span class="old">R$247</span></div>
+      <div class="anchor-row strong"><span>Pré-venda até 20/04</span><span class="new">R$127</span></div>
+    </div>
+
+    <div class="center-actions reveal">
+      <a href="https://pay.kiwify.com.br/aH5fe5K" class="btn btn-primary focus-ring" data-cta="offer" rel="noopener">Garantir por R$127</a>
+      <p class="trust">Acesso imediato • 12 meses • 7 dias de garantia</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROVA ========== -->
+<section class="sec sec-soft" id="prova">
+  <div class="sec-inner">
+    <span class="eyebrow center reveal">+250 alunos</span>
+    <h2 class="h2 center reveal">O que as pessoas <em>estão falando.</em></h2>
+
+    <div class="quotes">
+      <figure class="quote reveal">
+        <blockquote>Esse workshop me trouxe para a luz e abriu minha cabeça com relação a infinitas possibilidades com essas ferramentas de IA.</blockquote>
+        <figcaption>Bruno Stefan de Macedo Moura</figcaption>
+      </figure>
+
+      <figure class="quote reveal">
+        <blockquote>Muito bem explicado, com exemplos reais durante o workshop.</blockquote>
+        <figcaption>Lucimara Esteves — Gold Smile</figcaption>
+      </figure>
+
+      <figure class="quote reveal">
+        <blockquote>Muito conteúdo e entrega. Bastante conhecimento do mentor também.</blockquote>
+        <figcaption>Saulo Bulhões e Silva — Mentoria</figcaption>
+      </figure>
+
+      <figure class="quote reveal">
+        <blockquote>Muito bom esse formato que permite a participação.</blockquote>
+        <figcaption>Rafael Kummer — Escritório de advocacia</figcaption>
+      </figure>
+
+      <figure class="quote reveal">
+        <blockquote>Boa didática, conteúdo prático e direto ao ponto.</blockquote>
+        <figcaption>Jair — TI, automação e IA</figcaption>
+      </figure>
+
+      <figure class="quote reveal">
+        <blockquote>Muito bom, muita clareza no conteúdo.</blockquote>
+        <figcaption>Rafael Rafiuski</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ========== AUTOR ========== -->
+<section class="sec sec-dark" id="autor">
+  <div class="sec-inner">
+    <div class="author-grid">
+      <div class="author-visual reveal">
+        <img
+          src="assets/lucas-720.jpg"
+          srcset="assets/lucas-480.jpg 480w, assets/lucas-720.jpg 720w, assets/lucas-1080.jpg 1080w"
+          sizes="(min-width:820px) 440px, 72vw"
+          alt="Lucas Lopes"
+          width="832" height="1248"
+          loading="lazy" decoding="async">
+        <span class="author-tag" aria-hidden="true">
+          <span class="live-dot"></span>
+          Criador
+        </span>
+      </div>
+      <div class="author-body reveal">
+        <span class="eyebrow">Quem está do outro lado</span>
+        <h2 class="h2">Lucas Lopes.</h2>
+        <p>Passei pelo time de tecnologia de <strong>Algar Telecom</strong> e <strong>Board Academy</strong>. Economia pela <strong>UFU</strong>, MBA em Finanças pela <strong>FGV</strong>.</p>
+        <p>Foi aí que a ficha caiu: decisão boa é a que tem dado assertivo por trás. E dado assertivo é o que Claude entrega em minutos — se você souber pedir do jeito certo.</p>
+        <p>Hoje são <strong>mais de 250 alunos e mentorados</strong>. O Claude sem Código é a destilação do que funciona pra empresário que não quer (e não precisa) virar programador.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GARANTIA ========== -->
+<section class="sec guarantee" id="garantia">
+  <div class="sec-inner">
+    <div class="guard reveal">
+      <svg class="shield" viewBox="0 0 64 64" width="72" height="72" aria-hidden="true">
+        <path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M32 6l22 7v14c0 14-9 23-22 28-13-5-22-14-22-28V13l22-7z"/>
+        <path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M22 32l7 7 14-14"/>
+      </svg>
+      <h2 class="h2">7 dias pra testar.<br><span class="dim">Sem perguntas.</span></h2>
+      <p>Entra, assiste, tenta aplicar. Se em 7 dias você achar que não é pra você — qualquer motivo, nenhum motivo — devolvo os R$127 integral. Um botão na Kiwify, pronto.</p>
+      <p class="small">Risco zero. O único jeito de saber é entrando.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="sec sec-soft" id="faq">
+  <div class="sec-inner">
+    <span class="eyebrow center reveal">Dúvidas</span>
+    <h2 class="h2 center reveal">O que você provavelmente <em>está pensando.</em></h2>
+
+    <div class="qa">
+      <details class="reveal"><summary>Preciso saber programar?<span class="plus"></span></summary><div class="answer"><p>Não. O curso foi montado do zero pra quem nunca escreveu uma linha de código. Se você sabe abrir uma planilha e descrever um processo, está pronto.</p></div></details>
+
+      <details class="reveal"><summary>Só usei ChatGPT, nunca Claude. Vai rolar?<span class="plus"></span></summary><div class="answer"><p>Rola. O Módulo 01 cobre desde a instalação e primeiros usos. Em 1-2 horas você está no mesmo nível de quem já usa.</p></div></details>
+
+      <details class="reveal"><summary>Como é a call individual de diagnóstico?<span class="plus"></span></summary><div class="answer"><p>1-a-1 comigo, agendada depois que você entra. Abro o seu negócio, mapeio onde tem automação escondida e te digo por onde começar pra ver resultado rápido.</p></div></details>
+
+      <details class="reveal"><summary>Quanto tempo tenho pra assistir?<span class="plus"></span></summary><div class="answer"><p>12 meses de acesso a partir da compra. Tempo de sobra pra consumir no seu ritmo e voltar quando precisar aplicar algo novo.</p></div></details>
+
+      <details class="reveal"><summary>E se eu não gostar?<span class="plus"></span></summary><div class="answer"><p>7 dias de garantia incondicional. Devolução integral, sem pergunta. Você só aperta um botão na Kiwify.</p></div></details>
+
+      <details class="reveal"><summary>Onde acesso o conteúdo?<span class="plus"></span></summary><div class="answer"><p>Na área de membros da Kiwify. Acesso liberado automaticamente no e-mail logo após o pagamento.</p></div></details>
+
+      <details class="reveal"><summary>Por que R$127 agora se o cheio é R$247?<span class="plus"></span></summary><div class="answer"><p>É pré-venda — vale só até 20/04. Depois disso, o preço volta pra R$247 e os bônus podem ser revistos.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA FINAL ========== -->
+<section class="sec sec-dark cta-final" id="fechar">
+  <div class="sec-inner center-text">
+    <h2 class="h1-like reveal">Decisão em<br><em>60 segundos.</em></h2>
+    <p class="reveal big">Continua perdendo 8 horas por semana em tarefa manual, ou investe R$127 — menos que um jantar — e tira essas 8 horas de cima de você num fim de semana.</p>
+
+    <div class="chip chip-dark reveal">
+      <span class="old">R$247</span>
+      <span class="new">R$127</span>
+    </div>
+
+    <div class="center-actions reveal">
+      <a href="https://pay.kiwify.com.br/aH5fe5K" class="btn btn-primary focus-ring" data-cta="final" rel="noopener">Quero meu acesso</a>
+      <p class="trust on-dark">Pré-venda termina em <b id="countdown-2">--d --h --m --s</b></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="foot-inner">
+    <p class="foot-mark">Claude <em>sem Código</em></p>
+    <p class="foot-copy">© <span id="year">2026</span> Lucas Lopes. Todos os direitos reservados.</p>
+    <p class="foot-legal">Este produto não é afiliado nem endossado pela Anthropic. "Claude" é marca de seus respectivos donos.</p>
+  </div>
+</footer>
+
+<script src="flow.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>
