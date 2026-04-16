@@ -26,9 +26,9 @@ window.FLOW = {
   // ---- Tracking -------------------------------------------------------------
   // Preencha só o que for usar. Vazio = apenas log no console.
   tracking: {
-    ga4_id: '',           // Ex: 'G-XXXXXXXXXX'
-    meta_pixel_id: '',    // Ex: '1234567890'
-    custom_webhook: '',   // Ex: 'https://hooks.zapier.com/...'
+    ga4_id: '',                    // Ex: 'G-XXXXXXXXXX'
+    meta_pixel_id: '880818017355660',
+    custom_webhook: '',            // Ex: 'https://hooks.zapier.com/...'
   },
 
 };
