@@ -797,6 +797,221 @@ html,body{font-family:var(--font);background:#E8E6E3;color:var(--dark);line-heig
 .ad-n6 .brand{font-size:20px;font-weight:600;color:rgba(255,255,255,0.65)}
 .ad-n6 .brand em{color:var(--coral);font-style:normal;font-weight:800}
 
+/* ============================================================================
+   DUPLAS — versões complementares dos criativos favoritos
+   Feed→Stories: .ad-XX-s  ·  Stories→Feed: .ad-XX-f
+   ============================================================================ */
+
+/* ---- F1 → Stories (dor/resultado) ---- */
+.ad-f1-s{
+  background:var(--cream);padding:160px 80px;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.ad-f1-s .eye{font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--coral);margin-bottom:40px}
+.ad-f1-s .huge{font-size:420px;font-weight:800;line-height:0.88;letter-spacing:-0.055em;color:var(--dark)}
+.ad-f1-s .huge em{color:var(--coral);font-style:normal}
+.ad-f1-s .mid{font-size:52px;font-weight:500;line-height:1.2;letter-spacing:-0.01em;color:var(--dark);max-width:900px;margin-top:60px}
+.ad-f1-s .mid b{font-weight:700}
+.ad-f1-s .mid em{color:var(--coral);font-style:normal;font-weight:800}
+.ad-f1-s .foot{padding-top:48px;border-top:2px solid var(--dark)}
+.ad-f1-s .price-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:32px}
+.ad-f1-s .old{font-size:40px;color:var(--muted);text-decoration:line-through;font-weight:500}
+.ad-f1-s .new{font-size:140px;font-weight:800;letter-spacing:-0.03em;color:var(--coral)}
+.ad-f1-s .cta{background:var(--dark);color:#fff;padding:28px 0;border-radius:999px;text-align:center;font-size:32px;font-weight:700;letter-spacing:-0.01em;margin-bottom:16px}
+.ad-f1-s .brand{text-align:center;font-size:22px;color:var(--muted)}
+.ad-f1-s .brand em{color:var(--coral);font-style:normal;font-weight:700}
+
+/* ---- F2 → Stories (prova social) ---- */
+.ad-f2-s{
+  background:var(--dark);color:#fff;padding:160px 80px 140px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  background-image:radial-gradient(circle at 100% 0%,rgba(217,119,87,0.28) 0%,transparent 55%);
+}
+.ad-f2-s .tag{font-size:22px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--coral);margin-bottom:32px}
+.ad-f2-s .big{font-size:380px;font-weight:800;letter-spacing:-0.055em;line-height:0.88;color:#fff}
+.ad-f2-s .big em{color:var(--coral);font-style:normal}
+.ad-f2-s .label{font-size:48px;font-weight:500;color:rgba(255,255,255,0.8);margin-top:32px;letter-spacing:-0.01em;line-height:1.25}
+.ad-f2-s .label b{color:#fff;font-weight:800}
+.ad-f2-s .stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:56px;padding:40px 0;border-top:1px solid rgba(255,255,255,0.15);border-bottom:1px solid rgba(255,255,255,0.15)}
+.ad-f2-s .stat{text-align:center}
+.ad-f2-s .stat .n{font-size:60px;font-weight:800;letter-spacing:-0.02em;color:#fff;line-height:1}
+.ad-f2-s .stat .n em{color:var(--coral);font-style:normal}
+.ad-f2-s .stat .l{font-size:20px;color:rgba(255,255,255,0.6);margin-top:8px}
+.ad-f2-s .cta{background:var(--coral);color:#fff;padding:28px 0;border-radius:999px;text-align:center;font-size:34px;font-weight:700;letter-spacing:-0.01em;margin-top:44px}
+.ad-f2-s .deadline{font-size:24px;font-weight:500;color:rgba(255,255,255,0.7);text-align:center;margin-top:20px}
+
+/* ---- F5 → Stories (oferta direta) ---- */
+.ad-f5-s{
+  background:#fff;padding:180px 70px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;overflow:hidden;
+}
+.ad-f5-s::before{content:"";position:absolute;top:-10%;right:-20%;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,87,0.22) 0%,transparent 60%);filter:blur(30px)}
+.ad-f5-s > *{position:relative;z-index:1}
+.ad-f5-s .eye{font-size:22px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--coral);margin-bottom:32px;display:inline-flex;align-items:center;gap:12px}
+.ad-f5-s .eye::before{content:"";width:44px;height:2px;background:var(--coral)}
+.ad-f5-s .pre{font-size:44px;font-weight:500;color:var(--muted);margin-bottom:8px;text-decoration:line-through}
+.ad-f5-s .huge{font-size:440px;font-weight:800;line-height:0.88;letter-spacing:-0.05em;color:var(--dark)}
+.ad-f5-s .huge em{color:var(--coral);font-style:normal}
+.ad-f5-s .sub{font-size:42px;font-weight:500;margin-top:36px;line-height:1.25;letter-spacing:-0.01em;color:var(--dark);max-width:860px}
+.ad-f5-s .sub b{font-weight:800}
+.ad-f5-s .sub em{color:var(--coral);font-style:normal;font-weight:800}
+.ad-f5-s .bar{display:flex;flex-direction:column;gap:18px;margin-top:60px;font-size:28px;font-weight:600;color:var(--dark)}
+.ad-f5-s .bar span{display:inline-flex;align-items:center;gap:14px}
+.ad-f5-s .bar .dot{width:10px;height:10px;border-radius:50%;background:var(--coral)}
+.ad-f5-s .foot{padding-top:32px;border-top:2px solid var(--dark);margin-top:auto}
+.ad-f5-s .cta{background:var(--coral);color:#fff;padding:28px 0;border-radius:999px;text-align:center;font-size:34px;font-weight:700;letter-spacing:-0.01em;margin-bottom:16px}
+.ad-f5-s .brand{text-align:center;font-size:22px;font-weight:600;color:var(--muted)}
+.ad-f5-s .brand em{color:var(--coral);font-style:normal;font-weight:700}
+
+/* ---- N1 → Stories (domine o Claude, dark) ---- */
+.ad-n1-s{
+  background:var(--dark);color:#fff;padding:160px 70px 140px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;overflow:hidden;
+}
+.ad-n1-s::before{content:"";position:absolute;top:20%;right:-30%;width:1200px;height:1200px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,87,0.32) 0%,transparent 55%);filter:blur(50px)}
+.ad-n1-s > *{position:relative;z-index:1}
+.ad-n1-s .eye{font-size:24px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--coral)}
+.ad-n1-s .h{font-size:320px;font-weight:800;line-height:0.88;letter-spacing:-0.055em;color:#fff;margin-top:48px}
+.ad-n1-s .h em{color:var(--coral);font-style:normal}
+.ad-n1-s .sub{font-size:52px;font-weight:500;color:rgba(255,255,255,0.78);margin-top:40px;letter-spacing:-0.01em;line-height:1.18}
+.ad-n1-s .sub b{color:#fff;font-weight:800}
+.ad-n1-s .foot{padding-top:40px;border-top:1px solid rgba(255,255,255,0.15)}
+.ad-n1-s .price-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:28px}
+.ad-n1-s .old{font-size:38px;color:rgba(255,255,255,0.5);text-decoration:line-through;font-weight:500}
+.ad-n1-s .new{font-size:128px;font-weight:800;letter-spacing:-0.03em;color:var(--coral)}
+.ad-n1-s .cta{background:var(--coral);color:#fff;padding:30px 0;border-radius:999px;text-align:center;font-size:34px;font-weight:700;letter-spacing:-0.01em;margin-bottom:18px}
+.ad-n1-s .deadline{text-align:center;font-size:24px;color:rgba(255,255,255,0.65)}
+
+/* ---- N2 → Stories (não precisa ser dev) ---- */
+.ad-n2-s{
+  background:var(--cream);padding:170px 75px 140px;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.ad-n2-s .eye{font-size:22px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--coral);margin-bottom:48px}
+.ad-n2-s .line1{font-size:80px;font-weight:500;color:var(--muted);line-height:1.12;letter-spacing:-0.02em;text-decoration:line-through;margin-bottom:36px}
+.ad-n2-s .line2{font-size:168px;font-weight:800;color:var(--dark);line-height:0.95;letter-spacing:-0.04em}
+.ad-n2-s .line2 em{color:var(--coral);font-style:normal}
+.ad-n2-s .bar{margin-top:72px;display:flex;gap:16px;flex-wrap:wrap}
+.ad-n2-s .tag{background:var(--dark);color:#fff;padding:18px 32px;border-radius:999px;font-size:26px;font-weight:600;letter-spacing:-0.01em}
+.ad-n2-s .tag.coral{background:var(--coral)}
+.ad-n2-s .foot{padding-top:48px;border-top:2px solid var(--dark)}
+.ad-n2-s .price-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:32px}
+.ad-n2-s .old{font-size:38px;color:var(--muted);text-decoration:line-through;font-weight:500}
+.ad-n2-s .new{font-size:132px;font-weight:800;letter-spacing:-0.03em;color:var(--coral)}
+.ad-n2-s .cta{background:var(--dark);color:#fff;padding:28px 0;border-radius:999px;text-align:center;font-size:32px;font-weight:700;letter-spacing:-0.01em;margin-bottom:16px}
+.ad-n2-s .brand{text-align:center;font-size:22px;color:var(--muted)}
+.ad-n2-s .brand em{color:var(--coral);font-style:normal;font-weight:700}
+
+/* ---- N3 → Stories (trinca dominada) ---- */
+.ad-n3-s{
+  background:#fff;padding:160px 75px 140px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;overflow:hidden;
+}
+.ad-n3-s::before{content:"";position:absolute;top:-15%;left:-20%;width:1000px;height:1000px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,87,0.16) 0%,transparent 60%);filter:blur(30px)}
+.ad-n3-s > *{position:relative;z-index:1}
+.ad-n3-s .eye{font-size:22px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--coral);margin-bottom:44px}
+.ad-n3-s .pills{display:flex;flex-direction:column;gap:18px;margin-bottom:60px}
+.ad-n3-s .pill{align-self:flex-start;border:2px solid var(--line);background:var(--cream);padding:22px 44px;border-radius:999px;font-size:52px;font-weight:700;letter-spacing:-0.02em;color:var(--dark)}
+.ad-n3-s .pill.coral{background:var(--coral);color:#fff;border-color:var(--coral);align-self:flex-start;margin-left:16px}
+.ad-n3-s .pill.dark{background:var(--dark);color:#fff;border-color:var(--dark);align-self:flex-start;margin-left:48px}
+.ad-n3-s .h{font-size:120px;font-weight:800;line-height:0.98;letter-spacing:-0.035em;color:var(--dark)}
+.ad-n3-s .h em{color:var(--coral);font-style:normal}
+.ad-n3-s .sub{font-size:36px;font-weight:500;color:var(--muted);margin-top:32px;line-height:1.3;letter-spacing:-0.01em}
+.ad-n3-s .sub b{color:var(--dark);font-weight:800}
+.ad-n3-s .foot{padding-top:40px;border-top:2px solid var(--dark);margin-top:auto}
+.ad-n3-s .price-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:28px}
+.ad-n3-s .old{font-size:38px;color:var(--muted);text-decoration:line-through;font-weight:500}
+.ad-n3-s .new{font-size:130px;font-weight:800;letter-spacing:-0.03em;color:var(--coral)}
+.ad-n3-s .cta{background:var(--coral);color:#fff;padding:28px 0;border-radius:999px;text-align:center;font-size:32px;font-weight:700;letter-spacing:-0.01em}
+
+/* ---- N4 → Feed (DOMINE tipográfico) ---- */
+.ad-n4-f{
+  background:var(--dark);color:#fff;padding:90px 80px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;overflow:hidden;
+}
+.ad-n4-f::before{content:"";position:absolute;top:15%;left:-30%;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,87,0.32) 0%,transparent 55%);filter:blur(40px)}
+.ad-n4-f > *{position:relative;z-index:1}
+.ad-n4-f .eye{font-size:22px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--coral)}
+.ad-n4-f .stack-word{display:flex;flex-direction:column;margin:40px 0}
+.ad-n4-f .stack-word .word{font-size:196px;font-weight:800;line-height:0.85;letter-spacing:-0.055em;color:#fff}
+.ad-n4-f .stack-word .word.accent{color:var(--coral)}
+.ad-n4-f .sub{font-size:36px;color:rgba(255,255,255,0.7);font-weight:500;margin-top:16px;line-height:1.2;letter-spacing:-0.01em}
+.ad-n4-f .sub b{color:#fff;font-weight:800}
+.ad-n4-f .foot{padding-top:32px;border-top:1px solid rgba(255,255,255,0.15);display:flex;justify-content:space-between;align-items:center}
+.ad-n4-f .price{font-size:44px;font-weight:800;letter-spacing:-0.02em;color:#fff}
+.ad-n4-f .price em{color:var(--coral);font-style:normal}
+.ad-n4-f .cta{background:var(--coral);color:#fff;padding:20px 38px;border-radius:999px;font-size:24px;font-weight:700}
+
+/* ---- N5 → Feed (antes/depois) ---- */
+.ad-n5-f{
+  background:#fff;padding:80px 70px;
+  display:flex;flex-direction:column;
+}
+.ad-n5-f .eye{font-size:20px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--coral);margin-bottom:30px}
+.ad-n5-f .row{display:grid;grid-template-columns:1fr auto 1fr;gap:32px;align-items:center;margin-bottom:32px}
+.ad-n5-f .col{padding:32px 24px;border-radius:20px}
+.ad-n5-f .col.before{background:#F2F2F2}
+.ad-n5-f .col.after{background:linear-gradient(135deg,rgba(217,119,87,0.15) 0%,rgba(217,119,87,0.06) 100%);border:2px solid rgba(217,119,87,0.3)}
+.ad-n5-f .col .label{display:inline-block;font-size:16px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:6px 16px;border-radius:999px;margin-bottom:16px}
+.ad-n5-f .col.before .label{background:#DDD;color:var(--muted)}
+.ad-n5-f .col.after .label{background:var(--coral);color:#fff}
+.ad-n5-f .col .text{font-size:34px;font-weight:700;line-height:1.12;letter-spacing:-0.02em}
+.ad-n5-f .col.before .text{color:var(--muted)}
+.ad-n5-f .col.after .text{color:var(--dark)}
+.ad-n5-f .col.after .text em{color:var(--coral);font-style:normal}
+.ad-n5-f .arrow{font-size:72px;color:var(--coral);font-weight:300}
+.ad-n5-f .foot{margin-top:auto;padding-top:28px;border-top:2px solid var(--dark);display:flex;justify-content:space-between;align-items:center}
+.ad-n5-f .h-final{font-size:48px;font-weight:800;line-height:1;letter-spacing:-0.025em;color:var(--dark);max-width:540px}
+.ad-n5-f .h-final em{color:var(--coral);font-style:normal}
+.ad-n5-f .cta-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.ad-n5-f .price{font-size:40px;font-weight:800;letter-spacing:-0.02em;color:var(--coral)}
+.ad-n5-f .cta{background:var(--dark);color:#fff;padding:18px 34px;border-radius:999px;font-size:22px;font-weight:700;letter-spacing:-0.01em}
+
+/* ---- N6 → Feed (Claude + urgência compacto) ---- */
+.ad-n6-f{
+  background:linear-gradient(180deg,#1D1D1F 0%,#0A0A0C 100%);color:#fff;
+  padding:80px 70px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;overflow:hidden;
+}
+.ad-n6-f::before{content:"";position:absolute;top:10%;left:50%;transform:translateX(-50%);width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,87,0.38) 0%,transparent 50%);filter:blur(40px)}
+.ad-n6-f > *{position:relative;z-index:1}
+.ad-n6-f .label{font-size:18px;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:var(--coral);text-align:center;margin-bottom:18px}
+.ad-n6-f .label-line{display:inline-flex;align-items:center;gap:16px}
+.ad-n6-f .label-line::before,.ad-n6-f .label-line::after{content:"";width:40px;height:2px;background:var(--coral)}
+.ad-n6-f .top-h{font-size:30px;font-weight:700;text-align:center;letter-spacing:-0.01em;color:rgba(255,255,255,0.9);margin-bottom:10px}
+.ad-n6-f .top-h em{color:var(--coral);font-style:normal}
+.ad-n6-f .claude-mega{font-size:260px;font-weight:800;letter-spacing:-0.055em;line-height:0.85;text-align:center;color:var(--coral)}
+.ad-n6-f .sub-claude{font-size:32px;font-weight:600;color:rgba(255,255,255,0.82);text-align:center;letter-spacing:-0.01em;line-height:1.22;margin-top:12px}
+.ad-n6-f .sub-claude b{color:#fff;font-weight:800}
+.ad-n6-f .sub-claude em{color:var(--coral);font-style:normal;font-weight:800}
+.ad-n6-f .bot{text-align:center;padding-top:22px;border-top:1px solid rgba(255,255,255,0.15);display:flex;justify-content:space-between;align-items:center;gap:20px}
+.ad-n6-f .price-box{display:inline-flex;align-items:baseline;gap:14px}
+.ad-n6-f .price-box .old{font-size:24px;color:rgba(255,255,255,0.5);text-decoration:line-through;font-weight:500}
+.ad-n6-f .price-box .new{font-size:68px;font-weight:800;letter-spacing:-0.03em;color:#fff}
+.ad-n6-f .cta{background:var(--coral);color:#fff;padding:18px 34px;border-radius:999px;font-size:22px;font-weight:700;letter-spacing:-0.01em;white-space:nowrap}
+
+/* ---- S1 → Feed (dor narrativa compacta) ---- */
+.ad-s1-f{
+  background:var(--cream);padding:80px 80px;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.ad-s1-f .kicker{font-size:20px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--coral);margin-bottom:28px}
+.ad-s1-f .line{font-size:58px;font-weight:700;line-height:1.05;letter-spacing:-0.03em;color:var(--muted);margin-bottom:14px}
+.ad-s1-f .line.strong{color:var(--dark);font-weight:800}
+.ad-s1-f .line em{color:var(--coral);font-style:normal}
+.ad-s1-f .solution{font-size:70px;font-weight:800;line-height:1;letter-spacing:-0.035em;color:var(--dark);margin-top:32px}
+.ad-s1-f .solution em{color:var(--coral);font-style:normal}
+.ad-s1-f .foot{padding-top:32px;border-top:2px solid var(--dark);display:flex;justify-content:space-between;align-items:center}
+.ad-s1-f .price-big{display:flex;align-items:baseline;gap:14px}
+.ad-s1-f .price-big .old{font-size:34px;color:var(--muted);text-decoration:line-through;font-weight:500}
+.ad-s1-f .price-big .new{font-size:80px;font-weight:800;letter-spacing:-0.03em;color:var(--coral)}
+.ad-s1-f .cta{background:var(--dark);color:#fff;padding:20px 40px;border-radius:999px;font-size:24px;font-weight:700;letter-spacing:-0.01em}
+
 </style>
 </head>
 <body>
@@ -818,12 +1033,22 @@ html,body{font-family:var(--font);background:#E8E6E3;color:var(--dark);line-heig
   </div>
 
   <div class="toc">
-    <a href="#n1">⭐ N1 · Domine Claude (dark)</a>
-    <a href="#n2">⭐ N2 · Não precisa ser dev</a>
-    <a href="#n3">⭐ N3 · Trinca dominada</a>
-    <a href="#n4" class="stories">⭐ N4 · DOMINE vertical</a>
-    <a href="#n5" class="stories">⭐ N5 · Antes/Depois</a>
-    <a href="#n6" class="stories">⭐ N6 · Urgência Claude</a>
+    <a href="#f1-s" class="stories">★ F1→S · Dor (stories)</a>
+    <a href="#f2-s" class="stories">★ F2→S · Prova (stories)</a>
+    <a href="#f5-s" class="stories">★ F5→S · Oferta (stories)</a>
+    <a href="#n1-s" class="stories">★ N1→S · Domine (stories)</a>
+    <a href="#n2-s" class="stories">★ N2→S · Não precisa dev (stories)</a>
+    <a href="#n3-s" class="stories">★ N3→S · Trinca (stories)</a>
+    <a href="#n4-f">★ N4→F · DOMINE (feed)</a>
+    <a href="#n5-f">★ N5→F · Antes/Depois (feed)</a>
+    <a href="#n6-f">★ N6→F · Urgência (feed)</a>
+    <a href="#s1-f">★ S1→F · Dor (feed)</a>
+    <a href="#n1">N1 · Domine Claude (dark)</a>
+    <a href="#n2">N2 · Não precisa ser dev</a>
+    <a href="#n3">N3 · Trinca dominada</a>
+    <a href="#n4" class="stories">N4 · DOMINE vertical</a>
+    <a href="#n5" class="stories">N5 · Antes/Depois</a>
+    <a href="#n6" class="stories">N6 · Urgência Claude</a>
     <a href="#f1">F1 · Dor/Resultado</a>
     <a href="#f2">F2 · Prova Social</a>
     <a href="#f3">F3 · Trinca</a>
@@ -835,6 +1060,234 @@ html,body{font-family:var(--font);background:#E8E6E3;color:var(--dark);line-heig
     <a href="#s4" class="stories">S4 · Urgência</a>
   </div>
 </header>
+
+<!-- ============================================================
+     DUPLAS DOS FAVORITOS — versões complementares
+     ============================================================ -->
+
+<!-- ===== F1-stories ===== -->
+<div class="creative-wrap" id="f1-s">
+  <div class="creative-meta"><span class="id new">F1→S</span><span class="tag">1080×1920 · Stories</span><span class="angle">Dor/resultado em vertical</span></div>
+  <div class="scaled-stories">
+  <section class="creative stories ad-f1-s">
+    <div>
+      <div class="eye">Enquanto você decide</div>
+      <div class="huge"><em>8h</em></div>
+      <div class="mid">É o que você perde <b>por semana</b> em tarefa manual que o <em>Claude faz sozinho</em> — sem precisar ser programador.</div>
+    </div>
+    <div class="foot">
+      <div class="price-row"><span class="old">De R$247</span><span class="new">R$127</span></div>
+      <div class="cta">Quero automatizar</div>
+      <p class="brand">Claude <em>sem Código</em> · até 20/04</p>
+    </div>
+  </section>
+  </div>
+</div>
+
+<!-- ===== F2-stories ===== -->
+<div class="creative-wrap" id="f2-s">
+  <div class="creative-meta"><span class="id new">F2→S</span><span class="tag">1080×1920 · Stories</span><span class="angle">Prova social vertical</span></div>
+  <div class="scaled-stories">
+  <section class="creative stories ad-f2-s">
+    <div>
+      <div class="tag">prova social</div>
+      <div class="big"><em>+250</em></div>
+      <p class="label">empresários <b>já dominaram</b> Claude com esse método.<br>Quando você começa?</p>
+    </div>
+    <div>
+      <div class="stats">
+        <div class="stat"><div class="n"><em>9.8</em>/10</div><div class="l">avaliação</div></div>
+        <div class="stat"><div class="n"><em>8h</em>/sem</div><div class="l">economizadas</div></div>
+        <div class="stat"><div class="n"><em>7</em>dias</div><div class="l">garantia</div></div>
+      </div>
+      <div class="cta">Quero entrar — R$127</div>
+      <div class="deadline">Pré-venda até 20/04 · Claude sem Código</div>
+    </div>
+  </section>
+  </div>
+</div>
+
+<!-- ===== F5-stories ===== -->
+<div class="creative-wrap" id="f5-s">
+  <div class="creative-meta"><span class="id new">F5→S</span><span class="tag">1080×1920 · Stories</span><span class="angle">Oferta direta vertical</span></div>
+  <div class="scaled-stories">
+  <section class="creative stories ad-f5-s">
+    <div>
+      <div class="eye">Pré-venda · até 20/04</div>
+      <div class="pre">De R$247</div>
+      <div class="huge">R$<em>127</em></div>
+      <p class="sub">Pra <em>dominar o Claude</em> e automatizar <b>8 horas</b> por semana. Sem virar dev.</p>
+      <div class="bar">
+        <span><span class="dot"></span>12 meses de acesso</span>
+        <span><span class="dot"></span>7 dias de garantia</span>
+        <span><span class="dot"></span>Call individual comigo</span>
+        <span><span class="dot"></span>+250 alunos formados</span>
+      </div>
+    </div>
+    <div class="foot">
+      <div class="cta">Garantir minha vaga</div>
+      <p class="brand">Claude <em>sem Código</em></p>
+    </div>
+  </section>
+  </div>
+</div>
+
+<!-- ===== N1-stories ===== -->
+<div class="creative-wrap" id="n1-s">
+  <div class="creative-meta"><span class="id new">N1→S</span><span class="tag">1080×1920 · Stories</span><span class="angle">Domine o Claude — vertical dramático</span></div>
+  <div class="scaled-stories">
+  <section class="creative stories ad-n1-s">
+    <div>
+      <div class="eye">Sem código · sem dev</div>
+      <h1 class="h">Domine<br><em>o Claude.</em></h1>
+      <p class="sub">Sem precisar ser <b>programador</b>.<br>Em um fim de semana.</p>
+    </div>
+    <div class="foot">
+      <div class="price-row"><span class="old">De R$247</span><span class="new">R$127</span></div>
+      <div class="cta">Quero dominar também</div>
+      <p class="deadline">Pré-venda até 20/04 · Claude sem Código</p>
+    </div>
+  </section>
+  </div>
+</div>
+
+<!-- ===== N2-stories ===== -->
+<div class="creative-wrap" id="n2-s">
+  <div class="creative-meta"><span class="id new">N2→S</span><span class="tag">1080×1920 · Stories</span><span class="angle">Objeção reversa vertical</span></div>
+  <div class="scaled-stories">
+  <section class="creative stories ad-n2-s">
+    <div>
+      <div class="eye">A verdade sobre IA pra empresário</div>
+      <p class="line1">Não precisa virar programador.</p>
+      <p class="line2">Precisa <em>dominar<br>o Claude.</em></p>
+      <div class="bar">
+        <span class="tag">Sem código</span>
+        <span class="tag">Sem dev</span>
+        <span class="tag coral">+250 alunos</span>
+      </div>
+    </div>
+    <div class="foot">
+      <div class="price-row"><span class="old">De R$247</span><span class="new">R$127</span></div>
+      <div class="cta">Quero começar</div>
+      <p class="brand">Claude <em>sem Código</em> · pré-venda 20/04</p>
+    </div>
+  </section>
+  </div>
+</div>
+
+<!-- ===== N3-stories ===== -->
+<div class="creative-wrap" id="n3-s">
+  <div class="creative-meta"><span class="id new">N3→S</span><span class="tag">1080×1920 · Stories</span><span class="angle">Trinca vertical dominada</span></div>
+  <div class="scaled-stories">
+  <section class="creative stories ad-n3-s">
+    <div>
+      <div class="eye">Domine os três Claudes</div>
+      <div class="pills">
+        <span class="pill coral">Claude Chat</span>
+        <span class="pill dark">Claude Cowork</span>
+        <span class="pill">Claude Code</span>
+      </div>
+      <h2 class="h">A Trinca que <em>empresário</em><br>precisa dominar.</h2>
+      <p class="sub">4 módulos gravados + workshop + call individual. <b>Sem precisar ser programador.</b></p>
+    </div>
+    <div class="foot">
+      <div class="price-row"><span class="old">De R$247</span><span class="new">R$127</span></div>
+      <div class="cta">Garantir minha vaga</div>
+    </div>
+  </section>
+  </div>
+</div>
+
+<!-- ===== N4-feed ===== -->
+<div class="creative-wrap" id="n4-f">
+  <div class="creative-meta"><span class="id new">N4→F</span><span class="tag">1080×1080 · Feed</span><span class="angle">DOMINE tipográfico compacto</span></div>
+  <div class="scaled-feed">
+  <section class="creative feed ad-n4-f">
+    <div>
+      <div class="eye">O Claude domina processo. Você domina o Claude.</div>
+      <div class="stack-word">
+        <span class="word">DOMINE</span>
+        <span class="word accent">O CLAUDE.</span>
+      </div>
+      <p class="sub">Sem precisar ser <b>programador.</b></p>
+    </div>
+    <div class="foot">
+      <div class="price"><em>R$127</em> · até 20/04</div>
+      <div class="cta">Quero dominar</div>
+    </div>
+  </section>
+  </div>
+</div>
+
+<!-- ===== N5-feed ===== -->
+<div class="creative-wrap" id="n5-f">
+  <div class="creative-meta"><span class="id new">N5→F</span><span class="tag">1080×1080 · Feed</span><span class="angle">Antes/Depois horizontal</span></div>
+  <div class="scaled-feed">
+  <section class="creative feed ad-n5-f">
+    <div class="eye">A transformação</div>
+    <div class="row">
+      <div class="col before">
+        <span class="label">Antes</span>
+        <p class="text">Copia prompt do TikTok. Trava no Claude Code. Acha que IA pede dev.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="col after">
+        <span class="label">Depois</span>
+        <p class="text"><em>Domina</em> Chat, Cowork e Code. <em>Sem código.</em></p>
+      </div>
+    </div>
+    <div class="foot">
+      <h3 class="h-final">Num fim de semana.<br>Sem <em>ser dev</em>.</h3>
+      <div class="cta-wrap">
+        <span class="price">R$127</span>
+        <span class="cta">Começar</span>
+      </div>
+    </div>
+  </section>
+  </div>
+</div>
+
+<!-- ===== N6-feed ===== -->
+<div class="creative-wrap" id="n6-f">
+  <div class="creative-meta"><span class="id new">N6→F</span><span class="tag">1080×1080 · Feed</span><span class="angle">Urgência com Claude dominante compacto</span></div>
+  <div class="scaled-feed">
+  <section class="creative feed ad-n6-f">
+    <div>
+      <div class="label"><span class="label-line">Pré-venda termina em 4 dias</span></div>
+      <div class="top-h">Domine o <em>Claude</em>.</div>
+      <div class="claude-mega">Claude</div>
+      <p class="sub-claude"><b>Chat · Cowork · Code.</b> <em>Sem você virar dev.</em></p>
+    </div>
+    <div class="bot">
+      <div class="price-box">
+        <span class="old">R$247</span>
+        <span class="new">R$127</span>
+      </div>
+      <div class="cta">Garantir · 20/04</div>
+    </div>
+  </section>
+  </div>
+</div>
+
+<!-- ===== S1-feed ===== -->
+<div class="creative-wrap" id="s1-f">
+  <div class="creative-meta"><span class="id new">S1→F</span><span class="tag">1080×1080 · Feed</span><span class="angle">Dor narrativa compacta</span></div>
+  <div class="scaled-feed">
+  <section class="creative feed ad-s1-f">
+    <div>
+      <div class="kicker">Fim de semana · de novo</div>
+      <p class="line">Você vai passar a noite</p>
+      <p class="line strong">atualizando <em>planilha</em>?</p>
+      <p class="line strong">fazendo <em>relatório</em>?</p>
+      <div class="solution">Ou deixa o <em>Claude</em> fazer.</div>
+    </div>
+    <div class="foot">
+      <div class="price-big"><span class="old">R$247</span><span class="new">R$127</span></div>
+      <div class="cta">Quero agora</div>
+    </div>
+  </section>
+  </div>
+</div>
 
 <!-- ================= N1 — DOMINE O CLAUDE (feed) ================= -->
 <div class="creative-wrap" id="n1">
