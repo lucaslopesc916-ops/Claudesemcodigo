@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Variações N5 (Antes/Depois) — Claude sem Código</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#F5F0E8;--dark:#1D1D1F;--white:#FFFFFF;
+  --coral:#D97757;--coral-2:#BE5E3E;
+  --muted:#6E6E73;--line:rgba(0,0,0,0.1);
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",sans-serif;
+}
+html,body{font-family:var(--font);background:#E8E6E3;color:var(--dark);line-height:1.2;-webkit-font-smoothing:antialiased}
+
+.page{max-width:1280px;margin:0 auto;padding:32px 20px 80px}
+.page header{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:28px 32px;margin-bottom:40px}
+.page h1{font-size:28px;font-weight:700;letter-spacing:-0.02em;margin-bottom:8px}
+.page .sub{font-size:15px;color:var(--muted);line-height:1.5}
+
+.creative-wrap{margin-bottom:44px}
+.creative-meta{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.creative-meta .id{font-size:12px;font-weight:700;letter-spacing:0.1em;background:var(--coral);color:#fff;padding:5px 10px;border-radius:6px}
+.creative-meta .tag{font-size:13px;font-weight:500;color:var(--muted)}
+.creative-meta .angle{font-size:13px;font-weight:600;color:var(--dark);padding:4px 10px;background:#fff;border:1px solid var(--line);border-radius:6px}
+
+.creative{position:relative;transform-origin:top left;overflow:hidden;font-family:var(--font);color:var(--dark);line-height:1.1}
+.feed{width:1080px;height:1080px}
+.stories{width:1080px;height:1920px}
+.scaled-feed{transform:scale(0.55);margin-bottom:calc(-1080px * 0.45)}
+.scaled-stories{transform:scale(0.31);margin-bottom:calc(-1920px * 0.69)}
+@media(min-width:900px){.scaled-feed{transform:scale(0.6);margin-bottom:calc(-1080px * 0.4)}.scaled-stories{transform:scale(0.34);margin-bottom:calc(-1920px * 0.66)}}
+
+/* ============================================================
+   Layout Stories (1080×1920) — replica exata do N5 original
+   ============================================================ */
+.n5s{
+  background:var(--white);padding:140px 70px 120px;
+  display:flex;flex-direction:column;
+}
+.n5s .eye{
+  font-size:22px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--coral);margin-bottom:56px;
+}
+.n5s .col{margin-bottom:40px}
+.n5s .col .label{
+  display:inline-block;font-size:20px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  padding:8px 22px;border-radius:999px;margin-bottom:20px;
+}
+.n5s .col.before .label{background:#EEEEEE;color:var(--muted)}
+.n5s .col.after .label{background:var(--coral);color:#fff}
+.n5s .col .text{font-size:68px;font-weight:700;line-height:1.05;letter-spacing:-0.025em}
+.n5s .col.before .text{color:var(--muted)}
+.n5s .col.after .text{color:var(--dark)}
+.n5s .col.after .text em{color:var(--coral);font-style:normal}
+.n5s .arrow-block{text-align:center;font-size:88px;color:var(--coral);font-weight:300;margin:8px 0 24px;line-height:1}
+.n5s .foot{margin-top:auto;padding-top:44px;border-top:2px solid var(--dark)}
+.n5s .h-final{font-size:76px;font-weight:800;line-height:1;letter-spacing:-0.025em;color:var(--dark);margin-bottom:32px}
+.n5s .h-final em{color:var(--coral);font-style:normal}
+.n5s .cta-line{display:flex;justify-content:space-between;align-items:center}
+.n5s .price{font-size:60px;font-weight:800;letter-spacing:-0.02em;color:var(--coral)}
+.n5s .cta{background:var(--dark);color:#fff;padding:26px 52px;border-radius:999px;font-size:28px;font-weight:700;letter-spacing:-0.01em}
+
+/* ============================================================
+   Layout Feed (1080×1080) — versão compacta horizontal
+   ============================================================ */
+.n5f{
+  background:#fff;padding:80px 70px;
+  display:flex;flex-direction:column;
+}
+.n5f .eye{font-size:20px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--coral);margin-bottom:30px}
+.n5f .row{display:grid;grid-template-columns:1fr auto 1fr;gap:32px;align-items:center;margin-bottom:32px}
+.n5f .col{padding:32px 24px;border-radius:20px}
+.n5f .col.before{background:#F2F2F2}
+.n5f .col.after{background:linear-gradient(135deg,rgba(217,119,87,0.15) 0%,rgba(217,119,87,0.06) 100%);border:2px solid rgba(217,119,87,0.3)}
+.n5f .col .label{display:inline-block;font-size:16px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:6px 16px;border-radius:999px;margin-bottom:16px}
+.n5f .col.before .label{background:#DDD;color:var(--muted)}
+.n5f .col.after .label{background:var(--coral);color:#fff}
+.n5f .col .text{font-size:32px;font-weight:700;line-height:1.12;letter-spacing:-0.02em}
+.n5f .col.before .text{color:var(--muted)}
+.n5f .col.after .text{color:var(--dark)}
+.n5f .col.after .text em{color:var(--coral);font-style:normal}
+.n5f .arrow{font-size:72px;color:var(--coral);font-weight:300}
+.n5f .foot{margin-top:auto;padding-top:28px;border-top:2px solid var(--dark);display:flex;justify-content:space-between;align-items:center}
+.n5f .h-final{font-size:48px;font-weight:800;line-height:1;letter-spacing:-0.025em;color:var(--dark);max-width:540px}
+.n5f .h-final em{color:var(--coral);font-style:normal}
+.n5f .cta-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.n5f .price{font-size:40px;font-weight:800;letter-spacing:-0.02em;color:var(--coral)}
+.n5f .cta{background:var(--dark);color:#fff;padding:18px 34px;border-radius:999px;font-size:22px;font-weight:700;letter-spacing:-0.01em}
+
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>Variações N5 — Antes/Depois (o que performou melhor)</h1>
+  <p class="sub">10 variações de copy, mesmo layout visual. Cada uma em feed (1080×1080) + stories (1080×1920). Rode <code>python3 _export_v3.py</code> pra exportar tudo.</p>
+</header>
+
+<!-- ============ VAR 1 · Relatório ============ -->
+<div class="creative-wrap" id="a1-s"><div class="creative-meta"><span class="id">A1·S</span><span class="tag">1080×1920</span><span class="angle">Relatório semanal</span></div>
+<div class="scaled-stories"><section class="creative stories n5s">
+  <div class="eye">A transformação</div>
+  <div class="col before"><span class="label">Antes</span><p class="text">Passa 3 horas montando relatório semanal. No Excel. Manualmente. Todo domingo.</p></div>
+  <div class="arrow-block">↓</div>
+  <div class="col after"><span class="label">Depois</span><p class="text">Claude monta em <em>5 minutos.</em> Atualizado. Formatado. <em>Pronto pra enviar.</em></p></div>
+  <div class="foot"><h3 class="h-final">Em um fim de semana. Sem <em>ser dev.</em></h3><div class="cta-line"><div class="price">R$127</div><div class="cta">Começar</div></div></div>
+</section></div></div>
+
+<div class="creative-wrap" id="a1-f"><div class="creative-meta"><span class="id">A1·F</span><span class="tag">1080×1080</span><span class="angle">Relatório semanal</span></div>
+<div class="scaled-feed"><section class="creative feed n5f">
+  <div class="eye">A transformação</div>
+  <div class="row"><div class="col before"><span class="label">Antes</span><p class="text">Passa 3h montando relatório semanal. No Excel. Manualmente.</p></div><div class="arrow">→</div><div class="col after"><span class="label">Depois</span><p class="text">Claude monta em <em>5 minutos.</em> Formatado. <em>Pronto.</em></p></div></div>
+  <div class="foot"><h3 class="h-final">Num fim de semana. Sem <em>ser dev.</em></h3><div class="cta-wrap"><span class="price">R$127</span><span class="cta">Começar</span></div></div>
+</section></div></div>
+
+<!-- ============ VAR 2 · Custo dev ============ -->
+<div class="creative-wrap" id="a2-s"><div class="creative-meta"><span class="id">A2·S</span><span class="tag">1080×1920</span><span class="angle">Custo de dev</span></div>
+<div class="scaled-stories"><section class="creative stories n5s">
+  <div class="eye">A transformação</div>
+  <div class="col before"><span class="label">Antes</span><p class="text">Paga R$8.000/mês pra dev automatizar processo do negócio.</p></div>
+  <div class="arrow-block">↓</div>
+  <div class="col after"><span class="label">Depois</span><p class="text">Faz sozinho com <em>Claude.</em> Sem código. Sem depender de <em>ninguém.</em></p></div>
+  <div class="foot"><h3 class="h-final">Em um fim de semana. Sem <em>ser dev.</em></h3><div class="cta-line"><div class="price">R$127</div><div class="cta">Começar</div></div></div>
+</section></div></div>
+
+<div class="creative-wrap" id="a2-f"><div class="creative-meta"><span class="id">A2·F</span><span class="tag">1080×1080</span><span class="angle">Custo de dev</span></div>
+<div class="scaled-feed"><section class="creative feed n5f">
+  <div class="eye">A transformação</div>
+  <div class="row"><div class="col before"><span class="label">Antes</span><p class="text">Paga R$8k/mês pra dev automatizar processos.</p></div><div class="arrow">→</div><div class="col after"><span class="label">Depois</span><p class="text">Faz sozinho com <em>Claude.</em> Sem código. <em>Sem depender.</em></p></div></div>
+  <div class="foot"><h3 class="h-final">Num fim de semana. Sem <em>ser dev.</em></h3><div class="cta-wrap"><span class="price">R$127</span><span class="cta">Começar</span></div></div>
+</section></div></div>
+
+<!-- ============ VAR 3 · Reunião ============ -->
+<div class="creative-wrap" id="a3-s"><div class="creative-meta"><span class="id">A3·S</span><span class="tag">1080×1920</span><span class="angle">Resumo de reunião</span></div>
+<div class="scaled-stories"><section class="creative stories n5s">
+  <div class="eye">A transformação</div>
+  <div class="col before"><span class="label">Antes</span><p class="text">Sai da reunião e gasta 40 minutos escrevendo resumo e ações.</p></div>
+  <div class="arrow-block">↓</div>
+  <div class="col after"><span class="label">Depois</span><p class="text">Claude <em>resume, organiza ações</em> e distribui pro time. <em>Em 2 minutos.</em></p></div>
+  <div class="foot"><h3 class="h-final">Em um fim de semana. Sem <em>ser dev.</em></h3><div class="cta-line"><div class="price">R$127</div><div class="cta">Começar</div></div></div>
+</section></div></div>
+
+<div class="creative-wrap" id="a3-f"><div class="creative-meta"><span class="id">A3·F</span><span class="tag">1080×1080</span><span class="angle">Resumo de reunião</span></div>
+<div class="scaled-feed"><section class="creative feed n5f">
+  <div class="eye">A transformação</div>
+  <div class="row"><div class="col before"><span class="label">Antes</span><p class="text">40 minutos escrevendo resumo de reunião.</p></div><div class="arrow">→</div><div class="col after"><span class="label">Depois</span><p class="text">Claude <em>resume e distribui</em> pro time. <em>2 minutos.</em></p></div></div>
+  <div class="foot"><h3 class="h-final">Num fim de semana. Sem <em>ser dev.</em></h3><div class="cta-wrap"><span class="price">R$127</span><span class="cta">Começar</span></div></div>
+</section></div></div>
+
+<!-- ============ VAR 4 · Conteúdo ============ -->
+<div class="creative-wrap" id="a4-s"><div class="creative-meta"><span class="id">A4·S</span><span class="tag">1080×1920</span><span class="angle">Conteúdo pra rede</span></div>
+<div class="scaled-stories"><section class="creative stories n5s">
+  <div class="eye">A transformação</div>
+  <div class="col before"><span class="label">Antes</span><p class="text">Trava 2 horas pensando no post da semana. Não sai nada bom.</p></div>
+  <div class="arrow-block">↓</div>
+  <div class="col after"><span class="label">Depois</span><p class="text">Claude gera <em>10 posts</em> em 3 minutos. Você só <em>escolhe e publica.</em></p></div>
+  <div class="foot"><h3 class="h-final">Em um fim de semana. Sem <em>ser dev.</em></h3><div class="cta-line"><div class="price">R$127</div><div class="cta">Começar</div></div></div>
+</section></div></div>
+
+<div class="creative-wrap" id="a4-f"><div class="creative-meta"><span class="id">A4·F</span><span class="tag">1080×1080</span><span class="angle">Conteúdo pra rede</span></div>
+<div class="scaled-feed"><section class="creative feed n5f">
+  <div class="eye">A transformação</div>
+  <div class="row"><div class="col before"><span class="label">Antes</span><p class="text">Trava 2h pensando no post da semana.</p></div><div class="arrow">→</div><div class="col after"><span class="label">Depois</span><p class="text">Claude gera <em>10 posts</em> em 3 min. Você <em>escolhe.</em></p></div></div>
+  <div class="foot"><h3 class="h-final">Num fim de semana. Sem <em>ser dev.</em></h3><div class="cta-wrap"><span class="price">R$127</span><span class="cta">Começar</span></div></div>
+</section></div></div>
+
+<!-- ============ VAR 5 · Planilha ============ -->
+<div class="creative-wrap" id="a5-s"><div class="creative-meta"><span class="id">A5·S</span><span class="tag">1080×1920</span><span class="angle">Cruzar dados de planilha</span></div>
+<div class="scaled-stories"><section class="creative stories n5s">
+  <div class="eye">A transformação</div>
+  <div class="col before"><span class="label">Antes</span><p class="text">Abre 5 abas de planilha pra cruzar dados de vendas. Toda semana.</p></div>
+  <div class="arrow-block">↓</div>
+  <div class="col after"><span class="label">Depois</span><p class="text">Claude puxa, cruza e entrega o <em>insight pronto.</em> Sem fórmula. <em>Sem aba.</em></p></div>
+  <div class="foot"><h3 class="h-final">Em um fim de semana. Sem <em>ser dev.</em></h3><div class="cta-line"><div class="price">R$127</div><div class="cta">Começar</div></div></div>
+</section></div></div>
+
+<div class="creative-wrap" id="a5-f"><div class="creative-meta"><span class="id">A5·F</span><span class="tag">1080×1080</span><span class="angle">Cruzar dados de planilha</span></div>
+<div class="scaled-feed"><section class="creative feed n5f">
+  <div class="eye">A transformação</div>
+  <div class="row"><div class="col before"><span class="label">Antes</span><p class="text">5 abas de planilha pra cruzar dados. Toda semana.</p></div><div class="arrow">→</div><div class="col after"><span class="label">Depois</span><p class="text">Claude entrega o <em>insight pronto.</em> Sem fórmula. <em>Sem aba.</em></p></div></div>
+  <div class="foot"><h3 class="h-final">Num fim de semana. Sem <em>ser dev.</em></h3><div class="cta-wrap"><span class="price">R$127</span><span class="cta">Começar</span></div></div>
+</section></div></div>
+
+<!-- ============ VAR 6 · Gargalo ============ -->
+<div class="creative-wrap" id="a6-s"><div class="creative-meta"><span class="id">A6·S</span><span class="tag">1080×1920</span><span class="angle">Dono como gargalo</span></div>
+<div class="scaled-stories"><section class="creative stories n5s">
+  <div class="eye">A transformação</div>
+  <div class="col before"><span class="label">Antes</span><p class="text">É o gargalo do próprio negócio. Tudo passa por você. Nada anda sem você.</p></div>
+  <div class="arrow-block">↓</div>
+  <div class="col after"><span class="label">Depois</span><p class="text">Claude Cowork <em>distribui.</em> Time executa. Você <em>só decide.</em></p></div>
+  <div class="foot"><h3 class="h-final">Em um fim de semana. Sem <em>ser dev.</em></h3><div class="cta-line"><div class="price">R$127</div><div class="cta">Começar</div></div></div>
+</section></div></div>
+
+<div class="creative-wrap" id="a6-f"><div class="creative-meta"><span class="id">A6·F</span><span class="tag">1080×1080</span><span class="angle">Dono como gargalo</span></div>
+<div class="scaled-feed"><section class="creative feed n5f">
+  <div class="eye">A transformação</div>
+  <div class="row"><div class="col before"><span class="label">Antes</span><p class="text">Gargalo do negócio. Tudo passa por você.</p></div><div class="arrow">→</div><div class="col after"><span class="label">Depois</span><p class="text">Claude <em>distribui.</em> Time executa. Você <em>decide.</em></p></div></div>
+  <div class="foot"><h3 class="h-final">Num fim de semana. Sem <em>ser dev.</em></h3><div class="cta-wrap"><span class="price">R$127</span><span class="cta">Começar</span></div></div>
+</section></div></div>
+
+<!-- ============ VAR 7 · Proposta comercial ============ -->
+<div class="creative-wrap" id="a7-s"><div class="creative-meta"><span class="id">A7·S</span><span class="tag">1080×1920</span><span class="angle">Proposta comercial</span></div>
+<div class="scaled-stories"><section class="creative stories n5s">
+  <div class="eye">A transformação</div>
+  <div class="col before"><span class="label">Antes</span><p class="text">Monta proposta comercial copiando texto de um PDF antigo. Toda vez.</p></div>
+  <div class="arrow-block">↓</div>
+  <div class="col after"><span class="label">Depois</span><p class="text">Claude gera proposta <em>personalizada</em> em 3 minutos. <em>Com dados do cliente.</em></p></div>
+  <div class="foot"><h3 class="h-final">Em um fim de semana. Sem <em>ser dev.</em></h3><div class="cta-line"><div class="price">R$127</div><div class="cta">Começar</div></div></div>
+</section></div></div>
+
+<div class="creative-wrap" id="a7-f"><div class="creative-meta"><span class="id">A7·F</span><span class="tag">1080×1080</span><span class="angle">Proposta comercial</span></div>
+<div class="scaled-feed"><section class="creative feed n5f">
+  <div class="eye">A transformação</div>
+  <div class="row"><div class="col before"><span class="label">Antes</span><p class="text">Copia PDF antigo pra montar proposta. Toda vez.</p></div><div class="arrow">→</div><div class="col after"><span class="label">Depois</span><p class="text">Claude gera proposta <em>personalizada</em> em <em>3 minutos.</em></p></div></div>
+  <div class="foot"><h3 class="h-final">Num fim de semana. Sem <em>ser dev.</em></h3><div class="cta-wrap"><span class="price">R$127</span><span class="cta">Começar</span></div></div>
+</section></div></div>
+
+<!-- ============ VAR 8 · Email ============ -->
+<div class="creative-wrap" id="a8-s"><div class="creative-meta"><span class="id">A8·S</span><span class="tag">1080×1920</span><span class="angle">Emails personalizados</span></div>
+<div class="scaled-stories"><section class="creative stories n5s">
+  <div class="eye">A transformação</div>
+  <div class="col before"><span class="label">Antes</span><p class="text">Gasta 1 hora escrevendo email pra 1 cliente. Rascunho, revisão, envio.</p></div>
+  <div class="arrow-block">↓</div>
+  <div class="col after"><span class="label">Depois</span><p class="text">Claude escreve <em>20 emails personalizados</em> enquanto você <em>toma café.</em></p></div>
+  <div class="foot"><h3 class="h-final">Em um fim de semana. Sem <em>ser dev.</em></h3><div class="cta-line"><div class="price">R$127</div><div class="cta">Começar</div></div></div>
+</section></div></div>
+
+<div class="creative-wrap" id="a8-f"><div class="creative-meta"><span class="id">A8·F</span><span class="tag">1080×1080</span><span class="angle">Emails personalizados</span></div>
+<div class="scaled-feed"><section class="creative feed n5f">
+  <div class="eye">A transformação</div>
+  <div class="row"><div class="col before"><span class="label">Antes</span><p class="text">1h escrevendo email pra 1 cliente.</p></div><div class="arrow">→</div><div class="col after"><span class="label">Depois</span><p class="text">Claude escreve <em>20 emails</em> enquanto você <em>toma café.</em></p></div></div>
+  <div class="foot"><h3 class="h-final">Num fim de semana. Sem <em>ser dev.</em></h3><div class="cta-wrap"><span class="price">R$127</span><span class="cta">Começar</span></div></div>
+</section></div></div>
+
+<!-- ============ VAR 9 · Análise financeira ============ -->
+<div class="creative-wrap" id="a9-s"><div class="creative-meta"><span class="id">A9·S</span><span class="tag">1080×1920</span><span class="angle">Análise financeira</span></div>
+<div class="scaled-stories"><section class="creative stories n5s">
+  <div class="eye">A transformação</div>
+  <div class="col before"><span class="label">Antes</span><p class="text">Espera o financeiro entregar análise na sexta. Decide na segunda. Tarde.</p></div>
+  <div class="arrow-block">↓</div>
+  <div class="col after"><span class="label">Depois</span><p class="text">Claude analisa os números <em>em tempo real.</em> Você decide <em>na hora.</em></p></div>
+  <div class="foot"><h3 class="h-final">Em um fim de semana. Sem <em>ser dev.</em></h3><div class="cta-line"><div class="price">R$127</div><div class="cta">Começar</div></div></div>
+</section></div></div>
+
+<div class="creative-wrap" id="a9-f"><div class="creative-meta"><span class="id">A9·F</span><span class="tag">1080×1080</span><span class="angle">Análise financeira</span></div>
+<div class="scaled-feed"><section class="creative feed n5f">
+  <div class="eye">A transformação</div>
+  <div class="row"><div class="col before"><span class="label">Antes</span><p class="text">Espera o financeiro entregar análise na sexta.</p></div><div class="arrow">→</div><div class="col after"><span class="label">Depois</span><p class="text">Claude analisa <em>em tempo real.</em> Você decide <em>na hora.</em></p></div></div>
+  <div class="foot"><h3 class="h-final">Num fim de semana. Sem <em>ser dev.</em></h3><div class="cta-wrap"><span class="price">R$127</span><span class="cta">Começar</span></div></div>
+</section></div></div>
+
+<!-- ============ VAR 10 · Jornada 12h ============ -->
+<div class="creative-wrap" id="a10-s"><div class="creative-meta"><span class="id">A10·S</span><span class="tag">1080×1920</span><span class="angle">Jornada de 12 horas</span></div>
+<div class="scaled-stories"><section class="creative stories n5s">
+  <div class="eye">A transformação</div>
+  <div class="col before"><span class="label">Antes</span><p class="text">Trabalha 12h por dia e ainda não dá conta de tudo. Esgotado.</p></div>
+  <div class="arrow-block">↓</div>
+  <div class="col after"><span class="label">Depois</span><p class="text">Automatiza <em>8 horas</em> de tarefa repetitiva. Sobra tempo pra <em>estratégia.</em></p></div>
+  <div class="foot"><h3 class="h-final">Em um fim de semana. Sem <em>ser dev.</em></h3><div class="cta-line"><div class="price">R$127</div><div class="cta">Começar</div></div></div>
+</section></div></div>
+
+<div class="creative-wrap" id="a10-f"><div class="creative-meta"><span class="id">A10·F</span><span class="tag">1080×1080</span><span class="angle">Jornada de 12 horas</span></div>
+<div class="scaled-feed"><section class="creative feed n5f">
+  <div class="eye">A transformação</div>
+  <div class="row"><div class="col before"><span class="label">Antes</span><p class="text">12h/dia e não dá conta. Esgotado.</p></div><div class="arrow">→</div><div class="col after"><span class="label">Depois</span><p class="text">Automatiza <em>8h</em> de tarefa. Sobra tempo pra <em>estratégia.</em></p></div></div>
+  <div class="foot"><h3 class="h-final">Num fim de semana. Sem <em>ser dev.</em></h3><div class="cta-wrap"><span class="price">R$127</span><span class="cta">Começar</span></div></div>
+</section></div></div>
+
+</div>
+</body>
+</html>
