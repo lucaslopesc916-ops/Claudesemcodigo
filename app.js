@@ -50,7 +50,7 @@
     var els = document.querySelectorAll('#countdown, #countdown-2');
 
     if (diff <= 0) {
-      var fallback = CFG.deadlineFallback || 'Pré-venda encerrada';
+      var fallback = CFG.deadlineFallback || '';
       for (var i = 0; i < els.length; i++) {
         els[i].textContent = fallback;
         var parent = els[i].parentNode;

@@ -1,4 +1,4 @@
-# Claude sem Código — Página de pré-venda
+# Claude sem Código — Página de vendas
 
 Página estática em HTML/CSS/JS puro. Zero dependências externas. Funciona em qualquer servidor estático (Netlify, Vercel, Cloudflare Pages, GitHub Pages, S3, Kiwify, etc.).
 
@@ -10,8 +10,8 @@ Página estática em HTML/CSS/JS puro. Zero dependências externas. Funciona em 
 claude-sem-codigo/
 ├── index.html     → Página principal (CSS crítico inline)
 ├── styles.css     → Estilos não-críticos
-├── app.js         → Motor: contador, tracking, scroll depth
-├── flow.js        → Configuração editável (preço, prazo, link, IDs)
+├── app.js         → Motor: tracking, scroll depth
+├── flow.js        → Configuração editável (preço, link, IDs)
 ├── README.md      → Este arquivo
 └── DEPLOY.md      → Como publicar
 ```
@@ -34,22 +34,19 @@ Abre em `http://localhost:8000`.
 
 ## Personalizar (sem tocar em código complexo)
 
-### Mudar preço, prazo ou link de checkout
+### Mudar preço ou link de checkout
 
 Abra **`flow.js`** e edite:
 
 ```javascript
 offer: {
   productName: 'Claude sem Código',
-  priceFull: 247,
-  pricePromo: 127,
+  price: 247,
   checkoutUrl: 'https://pay.kiwify.com.br/aH5fe5K',
 },
-
-deadline: '2026-04-20T23:59:59-03:00',
 ```
 
-> ⚠️ Os valores em `flow.js` são para referência/tracking. Os números que aparecem na página estão no `index.html` (busca por `R$247` e `R$127` e altera). O link de checkout aparece em 3 lugares no HTML — busca por `pay.kiwify.com.br` e substitui em todos.
+> O link de checkout aparece em 3 lugares no HTML — busca por `pay.kiwify.com.br` e substitui em todos.
 
 ### Adicionar depoimentos
 
@@ -114,7 +111,7 @@ Se quiser usar GA4 ou Meta Pixel, você precisa **também** carregar os scripts 
 
 **Meta Pixel:** pegue o snippet oficial em [business.facebook.com](https://business.facebook.com) e cole no mesmo lugar.
 
-> ⚠️ Adicionar esses scripts aumenta o peso e o tempo de carregamento. Só adicione se for usar de verdade.
+> Adicionar esses scripts aumenta o peso e o tempo de carregamento. Só adicione se for usar de verdade.
 
 ### Eventos disparados automaticamente
 
@@ -127,27 +124,14 @@ Se quiser usar GA4 ou Meta Pixel, você precisa **também** carregar os scripts 
 
 ---
 
-## Depois que a pré-venda acabar
-
-O contador muda sozinho para o texto definido em `deadlineFallback`. **Mas os números R$247 e R$127 no HTML continuam fixos** — você precisa abrir o `index.html` e atualizar manualmente:
-
-1. Remover os blocos `.price-old` (preço antigo riscado)
-2. Trocar `R$127` por `R$247`
-3. Atualizar a ancoragem `.anchor` da seção de oferta
-
-Ou, mais simples: trocar o link de checkout para um novo produto pós-lançamento.
-
----
-
 ## Variações de headline para teste A/B
 
 Se quiser testar, troque o `<h1>` principal por uma destas:
 
 1. **(original)** Automatize **8 horas por semana** do seu negócio com Claude — sem virar programador.
 2. O método que empresário usa pra fazer Claude trabalhar sozinho — sem abrir uma linha de código.
-3. Pare de pagar R$3-8k/mês pra dev automatizar o que Claude faz em 1 fim de semana.
-4. Você já sabe usar Claude. Agora aprende a fazer ele trabalhar por você (mesmo não sendo dev).
-5. A Trinca Claude: o jeito mais rápido de um não-dev eliminar 8h/semana de tarefa manual.
+3. Você já sabe usar Claude. Agora aprende a fazer ele trabalhar por você (mesmo não sendo dev).
+4. A Trinca Claude: o jeito mais rápido de um não-dev eliminar 8h/semana de tarefa manual.
 
 ---
 
@@ -181,11 +165,9 @@ Teste com:
 ## Checklist antes de publicar
 
 - [ ] Link do checkout correto em **todos os 3 CTAs** do HTML
-- [ ] 4 depoimentos reais colados (ou reduzir o bloco)
+- [ ] Depoimentos reais colados
 - [ ] Nome correto do criador no bloco "Quem sou" e no footer
-- [ ] `deadline` em `flow.js` com a data certa no fuso `-03:00`
 - [ ] IDs de tracking preenchidos (se for usar)
-- [ ] Testar contador regressivo (abre o console e confere o `page_view`)
 - [ ] Testar clique em cada um dos 3 CTAs (deve abrir a Kiwify)
 - [ ] Ver no mobile (Chrome DevTools → modo device)
 - [ ] Rodar PageSpeed Insights

@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="O método que ensina empresário não-dev a automatizar relatórios, planilhas e conteúdo com Claude. Sem código. Pré-venda por R$127 até 20/04.">
+<meta name="description" content="O método que ensina empresário não-dev a automatizar relatórios, planilhas e conteúdo com Claude. Sem código.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#1D1D1F">
 <meta property="og:title" content="Claude sem Código — Automatize 8h/semana do seu negócio">
-<meta property="og:description" content="Método para empresários automatizarem tarefas com Claude sem virar programador. Pré-venda R$127 até 20/04.">
+<meta property="og:description" content="Método para empresários automatizarem tarefas com Claude sem virar programador.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/favicon-512.png">
 
@@ -98,22 +98,12 @@ body{
 }
 .nav-buy:hover{background:var(--text);color:var(--bg)}
 
-/* ---------- Ticker (pré-venda) ---------- */
-.ticker{
-  position:fixed;top:52px;left:0;right:0;z-index:99;
-  background:var(--bg-dark);color:var(--text-on-dark);
-  font-size:13px;font-weight:500;letter-spacing:0.01em;
-  text-align:center;padding:9px 20px;
-  border-bottom:1px solid var(--line-on-dark);
-}
-.ticker b{color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums}
-
-/* Offset para fixed header + ticker */
-.has-sticky{padding-top:90px}
+/* Offset para fixed header */
+body{padding-top:52px}
 
 /* ---------- Hero CSS crítico ---------- */
 .hero{
-  min-height:calc(100vh - 90px);
+  min-height:calc(100vh - 52px);
   display:flex;align-items:center;
   padding:clamp(56px,8vh,96px) 0 clamp(56px,6vh,80px);
   position:relative;
@@ -270,7 +260,7 @@ src="https://www.facebook.com/tr?id=880818017355660&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 </head>
-<body class="has-sticky">
+<body>
 
 <!-- ========== NAV ========== -->
 <nav class="nav" aria-label="Principal">
@@ -279,11 +269,6 @@ src="https://www.facebook.com/tr?id=880818017355660&ev=PageView&noscript=1"
     <a href="https://pay.kiwify.com.br/aH5fe5K" class="nav-buy focus-ring" data-cta="nav" rel="noopener">Garantir minha vaga</a>
   </div>
 </nav>
-
-<!-- ========== TICKER ========== -->
-<div class="ticker" role="status">
-  Pré-venda termina em <b id="countdown">--d --h --m --s</b>
-</div>
 
 <main id="top">
 
@@ -299,7 +284,7 @@ src="https://www.facebook.com/tr?id=880818017355660&ev=PageView&noscript=1"
     <div class="hero-text">
       <span class="eyebrow reveal">
         <span class="live-dot" aria-hidden="true"></span>
-        Pré-venda • acesso imediato
+        Acesso imediato
       </span>
 
       <h1 class="h1 reveal">
@@ -309,13 +294,6 @@ src="https://www.facebook.com/tr?id=880818017355660&ev=PageView&noscript=1"
       <p class="hero-sub reveal">
         O método que já ensinou <strong>+ de 120 pessoas</strong> a usar Claude Chat, Cowork e Code — sem precisar saber código ou contratar dev.
       </p>
-
-      <div class="chip reveal" aria-label="Preço promocional R$127, de R$247, até 20 de abril">
-        <span class="old">R$247</span>
-        <span class="sep" aria-hidden="true">→</span>
-        <span class="new">R$127</span>
-        <span class="chip-tag">até 20/04</span>
-      </div>
 
       <div class="hero-actions reveal">
         <a href="https://pay.kiwify.com.br/aH5fe5K" class="btn btn-primary focus-ring" data-cta="hero" rel="noopener">Quero acesso</a>
@@ -489,12 +467,11 @@ src="https://www.facebook.com/tr?id=880818017355660&ev=PageView&noscript=1"
 
     <div class="anchor reveal">
       <div class="anchor-row"><span>Valor separado</span><span class="old">R$3.982</span></div>
-      <div class="anchor-row"><span>Preço cheio</span><span class="old">R$247</span></div>
-      <div class="anchor-row strong"><span>Pré-venda até 20/04</span><span class="new">R$127</span></div>
+      <div class="anchor-row strong"><span>Seu investimento</span><span class="new">R$247</span></div>
     </div>
 
     <div class="center-actions reveal">
-      <a href="https://pay.kiwify.com.br/aH5fe5K" class="btn btn-primary focus-ring" data-cta="offer" rel="noopener">Garantir por R$127</a>
+      <a href="https://pay.kiwify.com.br/aH5fe5K" class="btn btn-primary focus-ring" data-cta="offer" rel="noopener">Garantir minha vaga</a>
       <p class="trust">Acesso imediato • 12 meses • 7 dias de garantia</p>
     </div>
   </div>
@@ -577,7 +554,7 @@ src="https://www.facebook.com/tr?id=880818017355660&ev=PageView&noscript=1"
         <path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M22 32l7 7 14-14"/>
       </svg>
       <h2 class="h2">7 dias pra testar.<br><span class="dim">Sem perguntas.</span></h2>
-      <p>Entra, assiste, tenta aplicar. Se em 7 dias você achar que não é pra você — qualquer motivo, nenhum motivo — devolvo os R$127 integral. Um botão na Kiwify, pronto.</p>
+      <p>Entra, assiste, tenta aplicar. Se em 7 dias você achar que não é pra você — qualquer motivo, nenhum motivo — devolvo integral. Um botão na Kiwify, pronto.</p>
       <p class="small">Risco zero. O único jeito de saber é entrando.</p>
     </div>
   </div>
@@ -602,7 +579,6 @@ src="https://www.facebook.com/tr?id=880818017355660&ev=PageView&noscript=1"
 
       <details class="reveal"><summary>Onde acesso o conteúdo?<span class="plus"></span></summary><div class="answer"><p>Na área de membros da Kiwify. Acesso liberado automaticamente no e-mail logo após o pagamento.</p></div></details>
 
-      <details class="reveal"><summary>Por que R$127 agora se o cheio é R$247?<span class="plus"></span></summary><div class="answer"><p>É pré-venda — vale só até 20/04. Depois disso, o preço volta pra R$247 e os bônus podem ser revistos.</p></div></details>
     </div>
   </div>
 </section>
@@ -611,16 +587,11 @@ src="https://www.facebook.com/tr?id=880818017355660&ev=PageView&noscript=1"
 <section class="sec sec-dark cta-final" id="fechar">
   <div class="sec-inner center-text">
     <h2 class="h1-like reveal">Decisão em<br><em>60 segundos.</em></h2>
-    <p class="reveal big">Continua perdendo 8 horas por semana em tarefa manual, ou investe R$127 — menos que um jantar — e tira essas 8 horas de cima de você num fim de semana.</p>
-
-    <div class="chip chip-dark reveal">
-      <span class="old">R$247</span>
-      <span class="new">R$127</span>
-    </div>
+    <p class="reveal big">Continua perdendo 8 horas por semana em tarefa manual, ou investe R$247 e tira essas 8 horas de cima de você num fim de semana.</p>
 
     <div class="center-actions reveal">
       <a href="https://pay.kiwify.com.br/aH5fe5K" class="btn btn-primary focus-ring" data-cta="final" rel="noopener">Quero meu acesso</a>
-      <p class="trust on-dark">Pré-venda termina em <b id="countdown-2">--d --h --m --s</b></p>
+      <p class="trust on-dark">Acesso imediato • 12 meses • 7 dias de garantia</p>
     </div>
   </div>
 </section>
