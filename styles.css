@@ -598,6 +598,249 @@ footer{
 .foot-legal{font-size:12px;color:var(--text-mute);max-width:48ch;margin:0 auto;line-height:1.5}
 
 /* ============================================================
+   Dobra de preço — split esquerda/direita
+   ============================================================ */
+.price-split{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(40px,6vw,72px);
+  align-items:center;
+}
+@media (min-width:860px){
+  .price-split{grid-template-columns:1.1fr 0.9fr}
+}
+
+/* ---- Lado esquerdo: lista ---- */
+.price-left .eyebrow{margin-bottom:clamp(28px,3vw,36px)}
+.price-list{
+  list-style:none;
+  display:flex;flex-direction:column;
+  gap:0;
+}
+.price-list li{
+  display:flex;align-items:baseline;gap:14px;
+  padding:clamp(14px,1.8vw,18px) 0;
+  border-bottom:1px solid var(--line-on-dark);
+  font-size:clamp(14px,0.3vw + 13px,16px);
+  line-height:1.45;
+}
+.price-check{
+  flex:0 0 20px;width:20px;height:20px;
+  border-radius:50%;
+  background:rgba(217,119,87,0.15);
+  position:relative;
+  top:2px;
+}
+.price-check::after{
+  content:"✓";
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-size:11px;font-weight:700;
+  color:var(--accent);
+}
+.price-item{
+  flex:1;
+  color:var(--text-on-dark-soft);
+  font-weight:400;
+}
+.price-old{
+  flex:0 0 auto;
+  color:rgba(245,245,247,0.4);
+  text-decoration:line-through;
+  font-variant-numeric:tabular-nums;
+  font-size:14px;font-weight:500;
+  white-space:nowrap;
+}
+
+/* Total */
+.price-total{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding-top:clamp(18px,2vw,24px);
+  margin-top:clamp(8px,1vw,12px);
+  border-top:2px solid rgba(255,255,255,0.15);
+}
+.price-total span:first-child{
+  font-size:14px;font-weight:500;
+  color:var(--text-on-dark-soft);
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+}
+.price-total-value{
+  font-size:clamp(1.4rem,1vw + 1rem,1.75rem);
+  font-weight:700;
+  color:rgba(245,245,247,0.45);
+  text-decoration:line-through;
+  font-variant-numeric:tabular-nums;
+  letter-spacing:-0.02em;
+}
+
+/* ---- Lado direito: preço em destaque ---- */
+.price-right{
+  text-align:center;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:var(--radius-l);
+  padding:clamp(36px,5vw,56px) clamp(28px,4vw,48px);
+}
+.price-headline{
+  font-size:clamp(1.2rem,0.5vw + 1rem,1.6rem);
+  font-weight:500;
+  color:var(--text-on-dark-soft);
+  line-height:1.35;
+  margin-bottom:clamp(28px,3vw,40px);
+  letter-spacing:-0.01em;
+}
+.price-headline em{
+  color:#fff;font-style:normal;font-weight:600;
+}
+.price-display{
+  display:flex;flex-direction:column;align-items:center;
+  gap:4px;
+  margin-bottom:clamp(28px,3vw,40px);
+}
+.price-installment-label{
+  font-size:clamp(14px,0.3vw + 13px,17px);
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+.price-installment{
+  font-size:clamp(3.5rem,5vw + 1rem,5.5rem);
+  font-weight:800;
+  letter-spacing:-0.04em;
+  line-height:1;
+  color:#fff;
+  font-variant-numeric:tabular-nums;
+}
+.price-installment small{
+  font-size:0.45em;
+  font-weight:700;
+  vertical-align:0.35em;
+  letter-spacing:-0.02em;
+}
+.price-cash{
+  font-size:clamp(14px,0.3vw + 13px,16px);
+  color:var(--text-on-dark-soft);
+  margin-top:8px;
+  font-variant-numeric:tabular-nums;
+}
+.price-right .btn{
+  margin-top:8px;
+  width:100%;max-width:320px;
+}
+.price-trust{
+  font-size:13px;
+  color:var(--text-on-dark-soft);
+  margin-top:16px;
+  letter-spacing:-0.005em;
+}
+
+/* ---- Mini calculadora ROI ---- */
+.roi-calc{
+  margin-top:clamp(24px,3vw,32px);
+  padding-top:clamp(24px,3vw,32px);
+  border-top:1px solid rgba(255,255,255,0.08);
+  text-align:left;
+}
+.roi-label{
+  font-size:14px;font-weight:500;
+  color:var(--text-on-dark-soft);
+  margin-bottom:18px;
+  text-align:center;
+}
+.roi-slider-wrap{
+  position:relative;
+  padding:0 4px;
+  margin-bottom:22px;
+}
+.roi-range{
+  -webkit-appearance:none;appearance:none;
+  width:100%;height:6px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.1);
+  outline:none;
+  cursor:pointer;
+}
+.roi-range::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;
+  width:28px;height:28px;
+  border-radius:50%;
+  background:var(--accent);
+  border:3px solid #fff;
+  box-shadow:0 2px 8px rgba(0,0,0,0.3);
+  cursor:grab;
+  transition:transform .15s var(--ease);
+}
+.roi-range::-webkit-slider-thumb:active{
+  cursor:grabbing;transform:scale(1.15);
+}
+.roi-range::-moz-range-thumb{
+  width:28px;height:28px;
+  border-radius:50%;
+  background:var(--accent);
+  border:3px solid #fff;
+  box-shadow:0 2px 8px rgba(0,0,0,0.3);
+  cursor:grab;
+}
+.roi-value-bubble{
+  position:absolute;top:-36px;
+  transform:translateX(-50%);
+  background:var(--accent);color:#fff;
+  font-size:14px;font-weight:700;
+  padding:5px 12px;border-radius:8px;
+  white-space:nowrap;
+  pointer-events:none;
+  transition:left .05s linear;
+}
+.roi-value-bubble::after{
+  content:"";position:absolute;
+  bottom:-5px;left:50%;transform:translateX(-50%);
+  border-left:6px solid transparent;
+  border-right:6px solid transparent;
+  border-top:6px solid var(--accent);
+}
+.roi-result{
+  display:flex;flex-direction:column;gap:0;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:var(--radius-s);
+  overflow:hidden;
+}
+.roi-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 16px;
+  font-size:13px;
+  color:var(--text-on-dark-soft);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.roi-row:last-child{border-bottom:none}
+.roi-num{
+  font-weight:700;font-variant-numeric:tabular-nums;
+  color:#fff;font-size:14px;
+}
+.roi-highlight{
+  background:rgba(217,119,87,0.1);
+}
+.roi-highlight .roi-num{
+  color:var(--accent);font-size:16px;
+}
+.roi-punchline{
+  text-align:center;
+  font-size:14px;
+  color:var(--text-on-dark-soft);
+  margin-top:16px;
+  line-height:1.5;
+}
+.roi-punchline b{color:#fff;font-weight:600}
+.roi-punchline em{color:var(--accent);font-style:normal;font-weight:700}
+
+/* ---- Mobile ---- */
+@media (max-width:859px){
+  .price-right{margin-top:8px}
+}
+
+/* ============================================================
    Scroll reveal (ativado por IntersectionObserver em app.js)
    ============================================================ */
 .reveal{

@@ -165,6 +165,50 @@
   }
 
   // ---------------------------------------------------------
+  // Mini calculadora ROI
+  // ---------------------------------------------------------
+  function setupRoiCalc() {
+    var slider = document.getElementById('roi-hours');
+    if (!slider) return;
+
+    var bubble = document.getElementById('roi-bubble');
+    var elMonthly = document.getElementById('roi-monthly');
+    var elYearly = document.getElementById('roi-yearly');
+    var elCost = document.getElementById('roi-cost');
+    var elPunch = document.getElementById('roi-punchline');
+    var price = 247;
+
+    function update() {
+      var h = parseInt(slider.value, 10);
+      var monthly = h * 4;
+      var yearly = monthly * 12;
+      var costPerHour = price / yearly;
+
+      bubble.textContent = h + 'h';
+      elMonthly.textContent = monthly + 'h';
+      elYearly.textContent = yearly + 'h';
+      elCost.textContent = 'R$' + costPerHour.toFixed(2).replace('.', ',');
+
+      // Posicionar bubble
+      var pct = (h - 1) / (20 - 1);
+      var thumbW = 28;
+      var trackW = slider.offsetWidth - thumbW;
+      bubble.style.left = (thumbW / 2 + pct * trackW) + 'px';
+
+      // Frase dinâmica: considerando hora a ~R$50 (conservador pra empresário)
+      var hourValue = 50;
+      var savedPerYear = yearly * hourValue;
+      var vezes = Math.floor(savedPerYear / price);
+      if (vezes < 2) vezes = 2;
+      elPunch.innerHTML = 'Automatizando <b>' + h + 'h/semana</b>, você economiza <em>R$' + savedPerYear.toLocaleString('pt-BR') + '/ano</em>. O curso se paga <em>' + vezes + '×</em>.';
+    }
+
+    slider.addEventListener('input', update);
+    window.addEventListener('resize', update);
+    update();
+  }
+
+  // ---------------------------------------------------------
   // Boot
   // ---------------------------------------------------------
   function boot() {
@@ -175,6 +219,7 @@
     bindCtas();
     bindScrollDepth();
     bindExit();
+    setupRoiCalc();
   }
 
   if (document.readyState === 'loading') {
