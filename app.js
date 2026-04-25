@@ -172,32 +172,28 @@
     var elRate = document.getElementById('roi-rate');
     if (!elHours || !elRate) return;
 
-    var elYearly = document.getElementById('roi-yearly');
-    var elSaved = document.getElementById('roi-saved');
-    var elMultiplier = document.getElementById('roi-multiplier');
+    var elHoursVal = document.getElementById('roi-hours-val');
+    var elRateVal = document.getElementById('roi-rate-val');
     var elPunch = document.getElementById('roi-punchline');
     var price = 247;
 
-    function formatBR(n) {
-      return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-    }
-
     function update() {
       var h = parseInt(elHours.value, 10) || 1;
-      var rate = parseInt(elRate.value, 10) || 10;
+      var rate = parseInt(elRate.value, 10) || 20;
       var yearly = h * 4 * 12;
       var saved = yearly * rate;
       var vezes = Math.floor(saved / price);
       if (vezes < 1) vezes = 1;
 
-      elYearly.textContent = yearly + 'h';
-      elSaved.textContent = 'R$' + formatBR(saved);
-      elMultiplier.textContent = vezes + '×';
-      elPunch.innerHTML = 'Automatizando <b>' + h + 'h/semana</b>, o curso se paga <em>' + vezes + '×</em>.';
+      elHoursVal.textContent = h + 'h';
+      elRateVal.textContent = 'R$' + rate;
+      elPunch.innerHTML = 'O curso se paga <em>' + vezes + '×</em> no primeiro ano.';
     }
 
     elHours.addEventListener('input', update);
+    elHours.addEventListener('change', update);
     elRate.addEventListener('input', update);
+    elRate.addEventListener('change', update);
     update();
   }
 

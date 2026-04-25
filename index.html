@@ -525,37 +525,25 @@ src="https://www.facebook.com/tr?id=880818017355660&ev=PageView&noscript=1"
 
         <!-- Mini calculadora de ROI -->
         <div class="roi-calc">
-          <div class="roi-inputs">
-            <div class="roi-field">
-              <label for="roi-hours">Horas manuais por semana</label>
-              <div class="roi-input-wrap">
-                <input type="number" id="roi-hours" class="roi-input" min="1" max="80" value="5" inputmode="numeric">
-                <span class="roi-suffix">h/sem</span>
+          <div class="roi-sliders">
+            <div class="roi-slider-row">
+              <div class="roi-slider-header">
+                <span class="roi-slider-label">Horas manuais por semana</span>
+                <span class="roi-slider-val" id="roi-hours-val">5h</span>
               </div>
+              <input type="range" id="roi-hours" class="roi-range" min="1" max="20" value="5">
             </div>
-            <div class="roi-field">
-              <label for="roi-rate">Valor da sua hora</label>
-              <div class="roi-input-wrap">
-                <span class="roi-prefix">R$</span>
-                <input type="number" id="roi-rate" class="roi-input" min="10" max="1000" value="50" inputmode="numeric">
+            <div class="roi-slider-row">
+              <div class="roi-slider-header">
+                <span class="roi-slider-label">Valor da sua hora</span>
+                <span class="roi-slider-val" id="roi-rate-val">R$50</span>
               </div>
+              <input type="range" id="roi-rate" class="roi-range" min="20" max="200" value="50" step="10">
             </div>
           </div>
-          <div class="roi-result" id="roi-result">
-            <div class="roi-row">
-              <span>Horas recuperadas por ano</span>
-              <span class="roi-num" id="roi-yearly">240h</span>
-            </div>
-            <div class="roi-row">
-              <span>Dinheiro economizado por ano</span>
-              <span class="roi-num" id="roi-saved">R$12.000</span>
-            </div>
-            <div class="roi-row roi-highlight">
-              <span>Retorno sobre o investimento</span>
-              <span class="roi-num" id="roi-multiplier">48×</span>
-            </div>
+          <div class="roi-bottom">
+            <p class="roi-punchline" id="roi-punchline">O curso se paga <em>48×</em> no primeiro ano.</p>
           </div>
-          <p class="roi-punchline" id="roi-punchline">Automatizando <b>5h/semana</b>, o curso se paga <em>48×</em>.</p>
         </div>
 
         <a href="https://pay.kiwify.com.br/aH5fe5K" class="btn btn-primary focus-ring" data-cta="price" rel="noopener">Garantir minha vaga</a>
