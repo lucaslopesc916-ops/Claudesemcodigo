@@ -178,6 +178,10 @@
     var elPunch = document.getElementById('roi-punchline');
     var price = 247;
 
+    function formatBR(n) {
+      return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+
     function update() {
       var h = parseInt(slider.value, 10);
       var monthly = h * 4;
@@ -200,10 +204,11 @@
       var savedPerYear = yearly * hourValue;
       var vezes = Math.floor(savedPerYear / price);
       if (vezes < 2) vezes = 2;
-      elPunch.innerHTML = 'Automatizando <b>' + h + 'h/semana</b>, você economiza <em>R$' + savedPerYear.toLocaleString('pt-BR') + '/ano</em>. O curso se paga <em>' + vezes + '×</em>.';
+      elPunch.innerHTML = 'Automatizando <b>' + h + 'h/semana</b>, você economiza <em>R$' + formatBR(savedPerYear) + '/ano</em>. O curso se paga <em>' + vezes + '×</em>.';
     }
 
     slider.addEventListener('input', update);
+    slider.addEventListener('change', update);
     window.addEventListener('resize', update);
     update();
   }
