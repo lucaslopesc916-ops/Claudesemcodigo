@@ -165,39 +165,6 @@
   }
 
   // ---------------------------------------------------------
-  // Mini calculadora ROI
-  // ---------------------------------------------------------
-  function setupRoiCalc() {
-    var elHours = document.getElementById('roi-hours');
-    var elRate = document.getElementById('roi-rate');
-    if (!elHours || !elRate) return;
-
-    var elHoursVal = document.getElementById('roi-hours-val');
-    var elRateVal = document.getElementById('roi-rate-val');
-    var elPunch = document.getElementById('roi-punchline');
-    var price = 247;
-
-    function update() {
-      var h = parseInt(elHours.value, 10) || 1;
-      var rate = parseInt(elRate.value, 10) || 20;
-      var yearly = h * 4 * 12;
-      var saved = yearly * rate;
-      var vezes = Math.floor(saved / price);
-      if (vezes < 1) vezes = 1;
-
-      elHoursVal.textContent = h + 'h';
-      elRateVal.textContent = 'R$' + rate;
-      elPunch.innerHTML = 'O curso se paga <em>' + vezes + '×</em> no primeiro ano.';
-    }
-
-    elHours.addEventListener('input', update);
-    elHours.addEventListener('change', update);
-    elRate.addEventListener('input', update);
-    elRate.addEventListener('change', update);
-    update();
-  }
-
-  // ---------------------------------------------------------
   // Boot
   // ---------------------------------------------------------
   function boot() {
@@ -208,7 +175,6 @@
     bindCtas();
     bindScrollDepth();
     bindExit();
-    setupRoiCalc();
   }
 
   if (document.readyState === 'loading') {
